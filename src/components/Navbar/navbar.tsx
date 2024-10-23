@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
-import { Sun, Moon, Menu, ChevronDown } from "lucide-react"
+import { Sun, Moon, Menu, ChevronDown, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 
@@ -22,6 +22,13 @@ const portfolioItems = [
   { name: "Clean Slate Pressure Washing", href: "/portfolio/clean-slate" },
   { name: "Pristine Clean Soft Wash", href: "/portfolio/pristine-clean" },
   { name: "OutKast Industrial Group", href: "/portfolio/outkast" },
+]
+
+const socialLinks = [
+  { icon: Facebook, href: "https://facebook.com/yourpage" },
+  { icon: Twitter, href: "https://twitter.com/yourhandle" },
+  { icon: Instagram, href: "https://instagram.com/yourprofile" },
+  { icon: Linkedin, href: "https://linkedin.com/in/yourprofile" },
 ]
 
 export default function Navbar() {
@@ -86,6 +93,20 @@ export default function Navbar() {
             <NavLink href="/contact" active={pathname === "/contact"}>Contact</NavLink>
           </nav>
           <div className="flex-1 flex items-center justify-end space-x-4">
+            <div className="hidden md:flex items-center space-x-2">
+              {socialLinks.map((social) => (
+                <Link key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    className="w-8 h-8 hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <social.icon className="h-4 w-4" />
+                    <span className="sr-only">{social.icon.name}</span>
+                  </Button>
+                </Link>
+              ))}
+            </div>
             {mounted && (
               <Button
                 variant="ghost"
@@ -128,6 +149,20 @@ export default function Navbar() {
                     ))}
                   </div>
                   <NavLink href="/contact" mobile active={pathname === "/contact"}>Contact</NavLink>
+                  <div className="flex items-center space-x-2 mt-4">
+                    {socialLinks.map((social) => (
+                      <Link key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
+                        <Button 
+                          variant="ghost" 
+                          size="icon" 
+                          className="w-8 h-8 hover:bg-primary hover:text-primary-foreground"
+                        >
+                          <social.icon className="h-4 w-4" />
+                          <span className="sr-only">{social.icon.name}</span>
+                        </Button>
+                      </Link>
+                    ))}
+                  </div>
                 </nav>
               </SheetContent>
             </Sheet>
