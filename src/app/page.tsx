@@ -1,3 +1,6 @@
+import Footer from "@/components/Footer/footer"
+import Hero from "@/components/Hero/hero"
+import AboutSection from "@/components/Home-Page/about-us"
 import Navbar from "@/components/Navbar/navbar"
 
 export default function Home() {
@@ -15,7 +18,8 @@ export default function Home() {
 
         <section className="w-full bg-gray-100 dark:bg-gray-800">
 
-    
+    <Hero />
+    <AboutSection />
   
         </section>
 
@@ -23,6 +27,7 @@ export default function Home() {
      
       <section className="w-full">
 
+<Footer />
 
       </section>
 
