@@ -1,11 +1,10 @@
-import TestimonialsSection from "@/components/Home-Page/testimonials"
-import Footer from "@/components/Footer/footer"
-import Hero from "@/components/Hero/hero"
-import AboutSection from "@/components/Home-Page/about-us"
-import Navbar from "@/components/Navbar/navbar"
-import PhotoGalleryhome from "@/components/Home-Page/photoGallery"
 
-export default function Home() {
+import GalleryPage from "@/components/Gallery/Gallery-page"
+import Footer from "@/components/Footer/footer"
+
+import Navbar from "@/components/Navbar/navbar"
+
+export default function Gallery() {
   return (
 
 
@@ -20,10 +19,7 @@ export default function Home() {
 
         <section className="w-full bg-gray-100 dark:bg-gray-800">
 
-    <Hero />
-    <AboutSection />
-    <PhotoGalleryhome />
-    <TestimonialsSection />
+<GalleryPage />
 
   
         </section>

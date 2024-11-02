@@ -90,6 +90,7 @@ export default function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+            <NavLink href="/gallery" active={pathname === "/gallery"}>Gallery</NavLink>
             <NavLink href="/contact" active={pathname === "/contact"}>Contact</NavLink>
           </nav>
           <div className="flex-1 flex items-center justify-end space-x-4">
@@ -148,6 +149,7 @@ export default function Navbar() {
                       </NavLink>
                     ))}
                   </div>
+                  <NavLink href="/gallery" mobile active={pathname === "/gallery"}>Gallery</NavLink>
                   <NavLink href="/contact" mobile active={pathname === "/contact"}>Contact</NavLink>
                   <div className="flex items-center space-x-2 mt-4">
                     {socialLinks.map((social) => (
