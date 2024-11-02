@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    reactStrictMode: true,
+    env: {
+      RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL,
+    },
+  }
+  
+  module.exports = nextConfig
