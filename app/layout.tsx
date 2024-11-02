@@ -17,27 +17,27 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'RayDunn Web Solutions',
-    template: '%s | RayDunn Web Solutions',
+    default: 'Clean Slate Pressure Washing',
+    template: '%s | Clean Slate Pressure Washing',
   },
-  description: 'RayDunn Web Solutions crafts stunning, high-performance websites that captivate and convert. Boost your digital presence with our innovative designs. Contact us!',
-  keywords: ['Next.js', 'React', 'JavaScript'],
-  authors: [{ name: 'Alex Rayer' }],
-  creator: 'Alex Rayer',
-  publisher: 'RayDunn Web Solutions',
+  description: 'Clean Slate Pressure Washing offers professional exterior cleaning services in New Orleans. We restore your property\'s beauty with our expert pressure washing solutions.',
+  keywords: ['Pressure Washing', 'Exterior Cleaning', 'New Orleans'],
+  authors: [{ name: 'Clean Slate Pressure Washing' }],
+  creator: 'Clean Slate Pressure Washing',
+  publisher: 'Clean Slate Pressure Washing',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'RayDunn Web Solutions',
-    description: 'RayDunn Web Solutions crafts stunning, high-performance websites that captivate and convert. Boost your digital presence with our innovative designs. Contact us!',
-    url: 'https://raydunnsolutions.com',
-    siteName: 'RayDunn Web Solutions',
+    title: 'Clean Slate Pressure Washing',
+    description: 'Professional pressure washing services in New Orleans. Restore your propertys beauty with our expert exterior cleaning solutions.',
+    url: 'https://cleanslatepressurewashingnola.com',
+    siteName: 'Clean Slate Pressure Washing',
     images: [
       {
-        url: 'https://raydunnsolutions.com/PNG Transparent Logo.png',
+        url: 'https://cleanslatepressurewashingnola.com/logo.png',
         width: 1200,
         height: 630,
       },
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RayDunn Web Solutions',
-    description: 'RayDunn Web Solutions crafts stunning, high-performance websites that captivate and convert. Boost your digital presence with our innovative designs. Contact us!',
-    creator: '@yourtwitterhandle',
-    images: ['https://raydunnsolutions.com/PNG Transparent Logo.png'],
+    title: 'Clean Slate Pressure Washing',
+    description: 'Professional pressure washing services in New Orleans. Restore your property\'s beauty with our expert exterior cleaning solutions.',
+    creator: '@cleanslatenola',
+    images: ['https://cleanslatepressurewashingnola.com/logo.png'],
   },
   robots: {
     index: true,
@@ -64,9 +64,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: 'cleanslatelogo.webp',
+
   },
   manifest: '/site.webmanifest',
 }

@@ -46,7 +46,13 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 flex items-center justify-start">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src="/cleanslatelogo.jpg" alt="RayDunn Logo" width={150} height={40} className="h-10 w-auto" />
+              <Image 
+                src="/cleanslatelogo.webp" 
+                alt="Clean Slate Pressure Washing Logo" 
+                width={150} 
+                height={70} 
+                className="h-auto w-[150px] min-w-[150px]"
+              />
             </Link>
           </div>
           <nav className="hidden md:flex space-x-1 flex-1 justify-center">
@@ -94,7 +100,7 @@ export default function Navbar() {
             <NavLink href="/contact" active={pathname === "/contact"}>Contact</NavLink>
           </nav>
           <div className="flex-1 flex items-center justify-end space-x-4">
-            <div className="hidden md:flex items-center space-x-2">
+            <div className="hidden xl:flex items-center space-x-2">
               {socialLinks.map((social) => (
                 <Link key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
                   <Button 
@@ -128,8 +134,8 @@ export default function Navbar() {
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-purple-50 dark:bg-purple-900">
-                <nav className="flex flex-col space-y-4 mt-4">
+              <SheetContent side="right" className="bg-purple-50 dark:bg-purple-900 flex flex-col">
+                <nav className="flex flex-col space-y-4 mt-4 flex-grow">
                   <NavLink href="/" mobile active={pathname === "/"}>Home</NavLink>
                   <NavLink href="/about" mobile active={pathname === "/about"}>About</NavLink>
                   <div className="space-y-2">
@@ -151,21 +157,21 @@ export default function Navbar() {
                   </div>
                   <NavLink href="/gallery" mobile active={pathname === "/gallery"}>Gallery</NavLink>
                   <NavLink href="/contact" mobile active={pathname === "/contact"}>Contact</NavLink>
-                  <div className="flex items-center space-x-2 mt-4">
-                    {socialLinks.map((social) => (
-                      <Link key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
-                        <Button 
-                          variant="ghost" 
-                          size="icon" 
-                          className="w-8 h-8 hover:bg-gold-500 hover:text-purple-900 dark:hover:text-purple-100"
-                        >
-                          <social.icon className="h-4 w-4" />
-                          <span className="sr-only">{social.icon.name}</span>
-                        </Button>
-                      </Link>
-                    ))}
-                  </div>
                 </nav>
+                <div className="flex items-center justify-center space-x-2 mt-auto py-4 border-t border-purple-200 dark:border-purple-700">
+                  {socialLinks.map((social) => (
+                    <Link key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className="w-8 h-8 hover:bg-gold-500 hover:text-purple-900 dark:hover:text-purple-100"
+                      >
+                        <social.icon className="h-4 w-4" />
+                        <span className="sr-only">{social.icon.name}</span>
+                      </Button>
+                    </Link>
+                  ))}
+                </div>
               </SheetContent>
             </Sheet>
           </div>
