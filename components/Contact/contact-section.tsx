@@ -1,231 +1,149 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
 import { motion } from 'framer-motion'
-import { Send, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Label } from "@/components/ui/label"
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-})
+export default function ContactSection() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
 
-async function sendEmail(data: z.infer<typeof formSchema>) {
-  'use client'
-  
-  // Here you would implement the logic to send an email
-  // For example, using a service like SendGrid or NodeMailer
-  console.log('Sending email:', data)
-  
-  // Simulate an API call
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  
-  // Return success or error based on the result
-  return { success: true, message: 'Email sent successfully!' }
-}
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setFormStatus('submitting')
 
-export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { toast } = useToast()
-  
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  })
+    const form = e.currentTarget
+    const formData = new FormData(form)
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
     try {
-      const result = await sendEmail(values)
-      if (result.success) {
-        toast({
-          title: "Success!",
-          description: result.message,
-          variant: "default",
-        })
+      const response = await fetch('https://formspree.io/f/your-form-id', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setFormStatus('submitted')
         form.reset()
       } else {
-        throw new Error(result.message)
+        throw new Error('Form submission failed')
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "There was a problem sending your message. Please try again.",
-        variant: "destructive",
-      })
-    } finally {
-      setIsSubmitting(false)
+      console.error('Error submitting form:', error)
+      setFormStatus('error')
     }
   }
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  }
+
   return (
-    <div className="bg-purple-50 dark:bg-purple-900 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-          <div className="lg:col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white dark:bg-purple-800 rounded-lg shadow-lg p-6 lg:sticky lg:top-4"
-            >
-              <div>
-                <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-100 mb-6 text-center lg:text-left">
-                  Clean Slate Pressure Washing
-                </h2>
-                <div className="flex flex-col items-center space-y-4 mb-8">
-                  <Button 
-                    size="lg"
-                    className="w-48 bg-gold-500 text-black hover:bg-gold-600 shadow-md hover:shadow-lg transition-all duration-300"
-                    onClick={() => window.location.href = 'tel:+1234567890'}
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Us
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="w-48 bg-white/10 backdrop-blur-sm border-gold-500 text-purple-700 hover:bg-gold-500 hover:text-black shadow-md hover:shadow-lg transition-all duration-300 dark:text-purple-200 dark:hover:text-black"
-                    onClick={() => window.location.href = 'mailto:contact@cleanslate.com'}
-                  >
-                    <Mail className="mr-2 h-5 w-5" />
-                    Email Us
-                  </Button>
+    <section className="py-16 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="container mx-auto px-4">
+        <motion.h2 
+          className="text-3xl font-bold text-purple-800 dark:text-purple-300 mb-8 text-center"
+          {...fadeInUp}
+        >
+          Get in Touch
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div {...fadeInUp}>
+            <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-purple-700 dark:text-purple-300">Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                  <span className="text-gray-600 dark:text-gray-300">(123) 456-7890</span>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-200 mb-4 text-center lg:text-left">
-                  Follow Us
-                </h3>
-                <div className="flex justify-center lg:justify-start space-x-4">
-                  {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                    <Button 
-                      key={index}
-                      variant="ghost" 
-                      size="icon"
-                      className="hover:bg-purple-100 dark:hover:bg-purple-700"
-                    >
-                      <Icon className="h-5 w-5 text-purple-600 dark:text-purple-300" />
-                    </Button>
-                  ))}
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                  <span className="text-gray-600 dark:text-gray-300">info@example.com</span>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-          <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white dark:bg-purple-800 rounded-lg shadow-lg p-6"
-            >
-              <h1 className="text-3xl font-extrabold text-center text-purple-800 dark:text-purple-100 mb-6">
-                Contact Us
-              </h1>
-              <p className="text-center text-purple-600 dark:text-purple-300 mb-8">
-                Have a question or want to work with us? Send us a message!
-              </p>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-purple-700 dark:text-purple-200">Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your name" {...field} className="bg-purple-50 dark:bg-purple-700 border-purple-300 dark:border-purple-600" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-purple-700 dark:text-purple-200">Email</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="your.email@example.com" {...field} className="bg-purple-50 dark:bg-purple-700 border-purple-300 dark:border-purple-600" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-purple-700 dark:text-purple-200">Message</FormLabel>
-                        <FormControl>
-                          <Textarea placeholder="Your message here..." {...field} className="bg-purple-50 dark:bg-purple-700 border-purple-300 dark:border-purple-600" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <div className="flex justify-center">
-                    <Button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      size="lg"
-                      className="w-48 bg-gold-500 hover:bg-gold-600 text-purple-900 font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-opacity-50"
-                    >
-                      {isSubmitting ? (
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="flex items-center justify-center"
-                        >
-                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Sending...
-                        </motion.div>
-                      ) : (
-                        <span className="flex items-center justify-center">
-                          Send Message <Send className="ml-2 h-4 w-4" />
-                        </span>
-                      )}
-                    </Button>
+                <div className="flex items-center space-x-3">
+                  <MapPin className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                  <span className="text-gray-600 dark:text-gray-300">123 Main St, City, State 12345</span>
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">Follow Us</h3>
+                  <div className="flex space-x-4">
+                    {[
+                      { icon: Facebook, label: "Facebook" },
+                      { icon: Twitter, label: "Twitter" },
+                      { icon: Instagram, label: "Instagram" },
+                      { icon: Linkedin, label: "LinkedIn" },
+                    ].map((social, index) => (
+                      <Button key={index} variant="outline" size="icon" className="rounded-full bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300">
+                        <social.icon className="w-5 h-5 text-purple-600 dark:text-purple-300" />
+                        <span className="sr-only">{social.label}</span>
+                      </Button>
+                    ))}
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+          <motion.div {...fadeInUp}>
+            <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-purple-700 dark:text-purple-300">Send Us a Message</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" name="name" placeholder="Your Name" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" name="email" type="email" placeholder="Your Email" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="service">Service</Label>
+                    <Select name="service" required>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="soft-pressure-washing">Soft and Pressure Washing</SelectItem>
+                        <SelectItem value="roof-washing">Roof Washing</SelectItem>
+                        <SelectItem value="concrete-washing">Concrete Washing</SelectItem>
+                        <SelectItem value="commercial-properties">Commercial Properties</SelectItem>
+                        <SelectItem value="fence-cleaning">Fence Cleaning</SelectItem>
+                        <SelectItem value="gutter-cleaning">Gutter Cleaning</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea id="message" name="message" placeholder="Your Message" required />
+                  </div>
+                  <Button type="submit" className="w-full" disabled={formStatus === 'submitting'}>
+                    {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                  </Button>
+                  {formStatus === 'submitted' && (
+                    <p className="text-green-600 dark:text-green-400">Thank you for your message. We&apos;ll get back to you soon!</p>
+                  )}
+                  {formStatus === 'error' && (
+                    <p className="text-red-600 dark:text-red-400">There was an error sending your message. Please try again.</p>
+                  )}
                 </form>
-              </Form>
-            </motion.div>
-          </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
