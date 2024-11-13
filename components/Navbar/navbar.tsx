@@ -11,18 +11,15 @@ import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 
 const services = [
-  { name: "Web Development", href: "/services/web-development" },
-  { name: "E-commerce Solutions", href: "/services/e-commerce" },
-  { name: "SEO Optimization", href: "/services/seo" },
-  { name: "Logo Design", href: "/services/logo-design" },
+  { name: "Concrete Washing", href: "/services/concrete-washing" },
+  { name: "Soft and Pressure Washing", href: "/services/soft-and-pressure-washing" },
+  { name: "Commercial Properties", href: "/services/commercial-properties" },
+  { name: "Roof Washing", href: "/services/roof-washing" },
+  { name: "Fence Cleaning", href: "/services/fence-cleaning" },
+  { name: "Gutter Cleaning", href: "/services/gutter-cleaning" },
 ]
 
-const portfolioItems = [
-  { name: "All Projects", href: "/portfolio" },
-  { name: "Clean Slate Pressure Washing", href: "/portfolio/clean-slate" },
-  { name: "Pristine Clean Soft Wash", href: "/portfolio/pristine-clean" },
-  { name: "OutKast Industrial Group", href: "/portfolio/outkast" },
-]
+
 
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com/yourpage" },
@@ -80,22 +77,7 @@ export default function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant={pathname.startsWith("/portfolio") ? "default" : "ghost"} className="text-sm font-medium">
-                  Portfolio <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-64 bg-purple-50 dark:bg-purple-900">
-                {portfolioItems.map((item) => (
-                  <DropdownMenuItem key={item.href} asChild>
-                    <Link href={item.href} className="w-full">
-                      {item.name}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+ 
             <NavLink href="/gallery" active={pathname === "/gallery"}>Gallery</NavLink>
             <NavLink href="/contact" active={pathname === "/contact"}>Contact</NavLink>
           </nav>
@@ -147,14 +129,7 @@ export default function Navbar() {
                       </NavLink>
                     ))}
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="font-medium text-lg text-purple-800 dark:text-purple-200">Portfolio</h3>
-                    {portfolioItems.map((item) => (
-                      <NavLink key={item.href} href={item.href} mobile active={pathname === item.href}>
-                        {item.name}
-                      </NavLink>
-                    ))}
-                  </div>
+              
                   <NavLink href="/gallery" mobile active={pathname === "/gallery"}>Gallery</NavLink>
                   <NavLink href="/contact" mobile active={pathname === "/contact"}>Contact</NavLink>
                 </nav>

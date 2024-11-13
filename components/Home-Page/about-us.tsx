@@ -25,11 +25,11 @@ export default function AboutUs() {
               className="w-full h-full min-h-[400px] relative rounded-lg overflow-hidden shadow-xl"
             >
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/cleanslatelogo.webp"
                 alt="Clean Slate Pressure Washing Team"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover bg-purple-950 dark:bg-slate-800"
                 priority
               />
             </motion.div>
