@@ -22,10 +22,10 @@ const services = [
 
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/yourpage" },
-  { icon: Twitter, href: "https://twitter.com/yourhandle" },
-  { icon: Instagram, href: "https://instagram.com/yourprofile" },
-  { icon: Linkedin, href: "https://linkedin.com/in/yourprofile" },
+  { icon: Facebook, href: "https://facebook.com/" },
+  { icon: Twitter, href: "https://twitter.com/" },
+  { icon: Instagram, href: "https://instagram.com/" },
+  { icon: Linkedin, href: "https://linkedin.com/in/" },
 ]
 
 export default function Navbar() {
