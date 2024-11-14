@@ -81,7 +81,7 @@ export default function AboutPage() {
             <Card className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 mb-4">
               <CardContent className="p-6">
                 <Image
-                  src="/placeholder.svg?height=100&width=200"
+                  src="/cleanslatelogo.webp"
                   alt="Company Logo"
                   width={200}
                   height={100}
