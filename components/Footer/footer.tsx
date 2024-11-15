@@ -8,9 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
   { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/" },
-  { icon: Linkedin, href: "https://linkedin.com/company/cleanslate" },
-
-
+  { icon: Linkedin, href: "http://www.linkedin.com/in/rickey-naquin-719008297" },
 ]
 
 export default function Footer() {
@@ -33,10 +31,10 @@ export default function Footer() {
             </CardContent>
           </Card>
           <Card className="bg-white dark:bg-gray-800 border-purple-200 dark:border-purple-700">
-            <CardContent className="p-6 flex flex-col items-center sm:items-start">
+            <CardContent className="p-6 flex flex-col items-center ">
               <h3 className="text-lg font-semibold tracking-tight mb-4 text-purple-800 dark:text-purple-300">Quick Links</h3>
               <ul className="space-y-2 text-center sm:text-left">
-                {['Home', 'About', 'Services', 'Gallery', 'Contact'].map((item) => (
+                {['Home', 'About', 'Services', 'Gallery', 'Blog', 'Contact'].map((item) => (
                   <li key={item}>
                     <Link 
                       href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
@@ -50,31 +48,35 @@ export default function Footer() {
             </CardContent>
           </Card>
           <Card className="bg-white dark:bg-gray-800 border-purple-200 dark:border-purple-700">
-            <CardContent className="p-6 space-y-4 flex flex-col items-center sm:items-start">
+            <CardContent className="p-6 space-y-4 flex flex-col items-center ">
               <h3 className="text-lg font-semibold tracking-tight text-purple-800 dark:text-purple-300">Contact Us</h3>
               <ul className="space-y-2 text-sm text-purple-700 dark:text-purple-300 text-center sm:text-left">
                 <li className="flex items-center space-x-2 justify-center sm:justify-start">
                   <MapPin className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-                  <span>123 Pressure Wash St, Cleanville, CS 12345</span>
+                  <span>Des Allemands, LA 70030</span>
                 </li>
                 <li className="flex items-center space-x-2 justify-center sm:justify-start">
                   <Phone className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-                  <span>(123) 456-7890</span>
+                  <span>(504) 352-7963</span>
                 </li>
                 <li className="flex items-center space-x-2 justify-center sm:justify-start">
                   <Mail className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-                  <span>info@cleanslate.com</span>
+                  <span>cleanslatepressurewashingservices@gmail.com</span>
                 </li>
               </ul>
               <div className="flex space-x-2 pt-2">
-                <Button variant="outline" size="sm" className="flex items-center space-x-2 border-purple-600 text-purple-600 hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900">
-                  <Phone className="h-4 w-4" />
-                  <span>Call Us</span>
-                </Button>
-                <Button variant="outline" size="sm" className="flex items-center space-x-2 border-purple-600 text-purple-600 hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900">
-                  <Mail className="h-4 w-4" />
-                  <span>Email Us</span>
-                </Button>
+                <Link href="tel:5043527963">
+                  <Button variant="outline" size="sm" className="flex items-center space-x-2 border-purple-600 text-purple-600 hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900">
+                    <Phone className="h-4 w-4" />
+                    <span>Call Us</span>
+                  </Button>
+                </Link>
+                <Link href="mailto:cleanslatepressurewashingservices@gmail.com">
+                  <Button variant="outline" size="sm" className="flex items-center space-x-2 border-purple-600 text-purple-600 hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900">
+                    <Mail className="h-4 w-4" />
+                    <span>Email Us</span>
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
