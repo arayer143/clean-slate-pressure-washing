@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import TestimonialsSection from "@/components/Home-Page/testimonials"
 import Footer from "@/components/Footer/footer"
-import Hero from "@/components/Hero/hero"
+import Hero from "@/components/Home-Page/hero"
 import AboutSection from "@/components/Home-Page/about-us"
 import Navbar from "@/components/Navbar/navbar"
 import PhotoGalleryhome from "@/components/Home-Page/photoGallery"
