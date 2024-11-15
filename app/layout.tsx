@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Clean Slate Pressure Washing',
-    description: 'Professional pressure washing services in New Orleans. Restore your propertys beauty with our expert exterior cleaning solutions.',
+    description: 'Professional pressure washing services in New Orleans. Restore your property\'s beauty with our expert exterior cleaning solutions.',
     url: 'https://cleanslatepressurewashingnola.com',
     siteName: 'Clean Slate Pressure Washing',
     images: [
@@ -64,10 +64,33 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: 'cleanslatelogo.webp',
-
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.png', sizes: '192x192' },
+    ],
+    apple: '/apple-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/apple-touch-icon-precomposed.png',
+    },
   },
   manifest: '/site.webmanifest',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  verification: {
+    google: 'your-google-verification-code',
+    // Add other verification codes if needed
+  },
+  alternates: {
+    canonical: 'https://cleanslatepressurewashingnola.com',
+    languages: {
+      'en-US': 'https://cleanslatepressurewashingnola.com',
+      // Add other language versions if applicable
+    },
+  },
 }
 
 export default function RootLayout({
