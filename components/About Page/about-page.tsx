@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, User, Target, Award, Leaf, Heart, DollarSign, ArrowRight, Users, Clock } from 'lucide-react'
+import { Facebook,  Instagram, Linkedin, Mail, Phone, User, Target, Award, Leaf, Heart, DollarSign, ArrowRight, Users, Clock } from 'lucide-react'
 
 export default function AboutPage() {
   const fadeInUp = {
@@ -94,10 +94,11 @@ export default function AboutPage() {
                 <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-4">Connect With Us</h3>
                 <div className="flex justify-center space-x-4">
                   {[
-                    { icon: Facebook, label: "Facebook" },
-                    { icon: Twitter, label: "Twitter" },
-                    { icon: Instagram, label: "Instagram" },
-                    { icon: Linkedin, label: "LinkedIn" },
+                    { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC", label: "Facebook" },
+                    { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/", label: "Instagram" },
+                    { icon: Linkedin, href: "https://linkedin.com/company/cleanslate", label: "LinkedIn" },
+
+              
                   ].map((social, index) => (
                     <motion.div
                       key={index}

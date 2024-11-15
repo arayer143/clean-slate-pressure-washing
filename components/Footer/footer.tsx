@@ -1,15 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/cleanslate" },
-  { icon: Twitter, href: "https://twitter.com/cleanslate" },
-  { icon: Instagram, href: "https://instagram.com/cleanslate" },
+  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
+  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/" },
   { icon: Linkedin, href: "https://linkedin.com/company/cleanslate" },
+
+
 ]
 
 export default function Footer() {
@@ -20,7 +21,7 @@ export default function Footer() {
           <Card className="bg-white dark:bg-gray-800 border-purple-200 dark:border-purple-700">
             <CardContent className="p-6 flex flex-col items-center text-center">
               <Image
-                src="/placeholder.svg?height=60&width=200"
+                src="/cleanslatelogo.webp"
                 alt="Clean Slate Pressure Washing Logo"
                 width={200}
                 height={60}

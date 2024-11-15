@@ -5,9 +5,8 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Expand, ChevronLeft, ChevronRight, X } from "lucide-react"
+import { Expand, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { galleryItemsHomepage } from "../Data/gallery-items-homepage"
-
 
 export default function PhotoGalleryhome() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -27,7 +26,7 @@ export default function PhotoGalleryhome() {
   }
 
   return (
-    <section id="gallery" className="py-12 sm:py-16 md:py-24 bg-purple-50 dark:bg-purple-900">
+    <section id="gallery" className="py-12 sm:py-16 md:py-24 bg-purple-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-purple-800 dark:text-purple-100">Our Work</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">

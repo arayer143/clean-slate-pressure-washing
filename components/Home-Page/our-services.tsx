@@ -12,37 +12,37 @@ export default function ServicesSection() {
       icon: Droplet,
       title: "Soft and Pressure Washing",
       description: "Soft Washing - Cleaning method that uses low-pressure water combined with specialized cleaning solutions to safely remove organics. Pressure Washing - Utilizes high-pressure water to remove dirt, grime, mold, and other contaminants from hard surfaces like concrete, brick, and stone.",
-      link: "/soft-and-pressure-washing"
+      link: "/services/soft-and-pressure-washing"
     },
     {
       icon: Home,
       title: "Roof Washing",
       description: "A specialized cleaning service designed to remove algae, mold, mildew, lichen, and moss from roofing materials. Utilizing a soft washing technique, this method employs low-pressure water combined with eco-friendly cleaning solutions to safely clean and protect your roof.",
-      link: "/roof-washing"
+      link: "/services/roof-washing"
     },
     {
       icon: DropletIcon,
       title: "Concrete Washing",
       description: "A professional service aimed at revitalizing the appearance of concrete surfaces by removing organics.",
-      link: "/concrete-washing"
+      link: "/services/concrete-washing"
     },
     {
       icon: Home,
       title: "Gutter Cleaning",
       description: "An essential maintenance service that involves the removal of leaves, debris, and other obstructions from your gutters and downspouts.",
-      link: "/gutter-cleaning"
+      link: "/services/gutter-cleaning"
     },
     {
       icon: Home,
       title: "Deck and Patio Washing",
       description: "A professional service designed to restore the beauty and safety of your outdoor living spaces. Utilizing specialized equipment and cleaning solutions, this service effectively removes organics from wood, composite, and stone surfaces.",
-      link: "/deck-and-patio-washing"
+      link: "/services/soft-and-pressure-washing"
     },
     {
       icon: GanttChartSquare,
       title: "Fence Cleaning",
       description: "A specialized service aimed at rejuvenating the appearance of your fences by removing dirt, grime, mold, mildew, and algae. Using appropriate cleaning techniques for wood, vinyl, and metal fences, this service restores their original look and helps prevent long-term damage.",
-      link: "/fence-cleaning"
+      link: "/services/fence-cleaning"
     }
   ]
 

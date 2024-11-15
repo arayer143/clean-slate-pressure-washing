@@ -2,13 +2,12 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
 import { Button } from "../ui/button"
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/cleanslate" },
-  { icon: Twitter, href: "https://twitter.com/cleanslate" },
-  { icon: Instagram, href: "https://instagram.com/cleanslate" },
+  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
+  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/" },
   { icon: Linkedin, href: "https://linkedin.com/company/cleanslate" },
 ]
 
@@ -113,14 +112,16 @@ export default function AboutUs() {
                 <Button 
                   size="lg"
                   className="bg-gold-500 text-black hover:bg-gold-600 shadow-md hover:shadow-lg transition-all duration-300"
+                  onClick={() => window.location.href = 'mailto:Rickeynaquin@cleanslatepressurewashingnola.com'}
                 >
                   <Mail className="mr-2 h-5 w-5" />
-                  Contact Us
+                  Email Us
                 </Button>
                 <Button 
                   size="lg"
                   variant="outline"
                   className="bg-white/10 backdrop-blur-sm border-gold-500 text-black hover:bg-gold-500 hover:text-black shadow-md hover:shadow-lg transition-all duration-300 dark:text-white dark:hover:text-black"
+                  onClick={() => window.location.href = 'tel:5043527963'}
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now

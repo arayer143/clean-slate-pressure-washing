@@ -5,6 +5,7 @@ import AboutSection from "@/components/Home-Page/about-us"
 import Navbar from "@/components/Navbar/navbar"
 import PhotoGalleryhome from "@/components/Home-Page/photoGallery"
 import ServicesSection from "@/components/Home-Page/our-services"
+import CTASection from "@/components/Home-Page/call-to-action"
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
     <Hero />
     <AboutSection />
     <ServicesSection />
+    <CTASection />
     <PhotoGalleryhome />
     <TestimonialsSection />
 
