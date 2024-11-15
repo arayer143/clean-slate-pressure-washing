@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar/navbar"
 import PhotoGalleryhome from "@/components/Home-Page/photoGallery"
 import ServicesSection from "@/components/Home-Page/our-services"
 import CTASection from "@/components/Home-Page/call-to-action"
+import BlogPreview from "@/components/Home-Page/blog-preview"
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
     <AboutSection />
     <ServicesSection />
     <CTASection />
+    <BlogPreview />
     <PhotoGalleryhome />
     <TestimonialsSection />
 
