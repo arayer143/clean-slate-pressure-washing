@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: 'Transform your property with our expert pressure washing services. From residential to commercial, we deliver spotless results.',
     images: [
       {
-        url: 'https://cleanslatepressurewashingnola.com/home-hero.jpg',
+        url: 'https://cleanslatepressurewashingnola.com/cleanslatelogo.webp',
         width: 1200,
         height: 630,
         alt: 'Clean Slate Pressure Washing in action',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Clean Slate Pressure Washing ',
     description: 'Expert pressure washing services for homes and businesses. Get a clean slate today!',
-    images: ['https://cleanslatepressurewashingnola.com/home-hero.jpg'],
+    images: ['https://cleanslatepressurewashingnola.com/cleanslatelogo.webp'],
   },
 }
 

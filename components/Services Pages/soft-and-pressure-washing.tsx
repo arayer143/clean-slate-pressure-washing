@@ -18,15 +18,16 @@ export default function SoftAndPressureWashing() {
   ]
 
   const galleryImages = [
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Siding before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Siding before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Siding before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Brick Siding before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Brick Siding before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Commercial Sign before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Patio before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Patio before and after' },
+    { src: '/siding-beforeandafter.webp', alt: 'Siding before and after', title: 'Siding Transformation' },
+    { src: '/siding2-beforeandafter.webp', alt: 'Siding before and after', title: 'Another Siding Cleaning' },
+    { src: '/before-and-after9.webp', alt: 'Siding before and after', title: 'Siding Restoration' },
+    { src: '/before-and-after1.webp', alt: 'Brick Siding before and after', title: 'Brick Siding Cleaning' },
+    { src: '/bricksiding-beforeandafter.webp', alt: 'Brick Siding before and after', title: 'Brick Siding Transformation' },
+    { src: '/sign-beforeandafter.webp', alt: 'Commercial Sign before and after', title: 'Commercial Sign Cleaning' },
+    { src: '/patio-beforeandafter.webp', alt: 'Patio before and after', title: 'Patio Restoration' },
+    { src: '/patio-beforeandafter-2.webp', alt: 'Patio before and after', title: 'Another Patio Cleaning' },
   ]
+  
 
   return (
     <div className="min-h-screen bg-background">

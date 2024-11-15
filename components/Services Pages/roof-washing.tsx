@@ -1,11 +1,13 @@
 'use client'
 
+import * as React from "react"
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Home, ShieldX, Droplets } from 'lucide-react'
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
+import { Home, ShieldX, Droplets, Expand, ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 export default function RoofWashing() {
   const benefits = [
@@ -22,13 +24,29 @@ export default function RoofWashing() {
   ]
 
   const galleryImages = [
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Gas station before' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Gas station after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after' },
+    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after cleaning', title: 'Roof Transformation' },
+    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after washing', title: 'Roof Cleaning Results' },
+    { src: '/placeholder.svg?height=300&width=400', alt: 'Gas station before cleaning', title: 'Gas Station Roof - Before' },
+    { src: '/placeholder.svg?height=300&width=400', alt: 'Gas station after cleaning', title: 'Gas Station Roof - After' },
+    { src: '/placeholder.svg?height=300&width=400', alt: 'Residential roof before and after', title: 'Residential Roof Cleaning' },
+    { src: '/placeholder.svg?height=300&width=400', alt: 'Commercial roof before and after', title: 'Commercial Roof Washing' },
   ]
+
+  const [isOpen, setIsOpen] = React.useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index)
+    setIsOpen(true)
+  }
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % galleryImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + galleryImages.length) % galleryImages.length)
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -99,33 +117,76 @@ export default function RoofWashing() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-12"
+          id="gallery"
         >
-          <Card className="bg-white dark:bg-gray-800 text-center">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-purple-700 dark:text-yellow-300">Our Work</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {galleryImages.map((image, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="relative aspect-video overflow-hidden rounded-lg"
-                  >
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform hover:scale-105"
-                    />
-                  </motion.div>
-                ))}
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-purple-800 dark:text-purple-100">Our Roof Washing Portfolio</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            {galleryImages.map((image, index) => (
+              <Card key={index} className="overflow-hidden group bg-white dark:bg-purple-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-0 relative aspect-[4/3]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-purple-900 bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => openLightbox(index)}
+                      className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-yellow-400 hover:bg-yellow-500 p-2 rounded-full"
+                    >
+                      <Expand className="w-6 h-6" />
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            <DialogContent className="max-w-[95vw] w-full p-0 bg-white dark:bg-purple-800 sm:max-w-4xl">
+              <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-[80vh]">
+                <Image
+                  src={galleryImages[currentImageIndex].src}
+                  alt={galleryImages[currentImageIndex].alt}
+                  fill
+                  sizes="(max-width: 640px) 95vw, (max-width: 1024px) 90vw, 1200px"
+                  className="object-contain"
+                  priority
+                />
+                <DialogClose asChild>
+                  <button className="absolute top-2 right-2 z-50 p-2 rounded-full bg-purple-100 hover:bg-purple-200 text-purple-800 dark:bg-purple-700 dark:hover:bg-purple-600 dark:text-purple-100 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <X className="h-6 w-6" />
+                    <span className="sr-only">Close</span>
+                  </button>
+                </DialogClose>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-purple-100 hover:bg-purple-200 text-purple-800 dark:bg-purple-700 dark:hover:bg-purple-600 dark:text-purple-100"
+                  onClick={prevImage}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                  <span className="sr-only">Previous image</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-purple-100 hover:bg-purple-200 text-purple-800 dark:bg-purple-700 dark:hover:bg-purple-600 dark:text-purple-100"
+                  onClick={nextImage}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                  <span className="sr-only">Next image</span>
+                </Button>
               </div>
-            </CardContent>
-          </Card>
+              <div className="p-4 text-center">
+                <p className="text-lg font-semibold text-purple-800 dark:text-purple-100">{galleryImages[currentImageIndex].title}</p>
+                <p className="text-sm text-purple-600 dark:text-purple-300">{galleryImages[currentImageIndex].alt}</p>
+              </div>
+            </DialogContent>
+          </Dialog>
         </motion.section>
 
         <motion.section 

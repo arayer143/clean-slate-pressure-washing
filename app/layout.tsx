@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: 'Clean Slate Pressure Washing',
     images: [
       {
-        url: 'https://cleanslatepressurewashingnola.com/logo.png',
+        url: 'https://cleanslatepressurewashingnola.com/cleanslatelogo.jpg',
         width: 1200,
         height: 630,
       },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Clean Slate Pressure Washing',
     description: 'Professional pressure washing services in New Orleans. Restore your property\'s beauty with our expert exterior cleaning solutions.',
     creator: '@cleanslatenola',
-    images: ['https://cleanslatepressurewashingnola.com/logo.png'],
+    images: ['https://cleanslatepressurewashingnola.com/cleanslatelogo.jpg'],
   },
   robots: {
     index: true,
@@ -66,13 +66,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/icon.png', sizes: '192x192' },
+
     ],
-    apple: '/apple-icon.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/apple-touch-icon-precomposed.png',
-    },
+
   },
   manifest: '/site.webmanifest',
   viewport: {

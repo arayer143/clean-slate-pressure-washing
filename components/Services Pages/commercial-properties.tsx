@@ -11,7 +11,7 @@ import { Building2, Sparkles, Shield, TrendingUp, Clock, Leaf, Droplets, Expand,
 
 const benefits = [
   { icon: Building2, title: 'Enhance Curb Appeal', description: 'Regular cleaning of your commercial property can significantly improve its appearance, making a great first impression on clients and visitors.' },
-  { icon: Shield, title: 'Increase Property Value', description: 'Well-maintained exteriors can boost your property value and attract potential tenants or buyers if youre looking to sell or lease.' },
+  { icon: Shield, title: 'Increase Property Value', description: 'Well-maintained exteriors can boost your property value and attract potential tenants or buyers if you are looking to sell or lease.' },
   { icon: Sparkles, title: 'Promote a Healthy Environment', description: 'Professional cleaning removes harmful contaminants like mold, mildew, and algae, creating a healthier environment for employees and customers.' },
   { icon: TrendingUp, title: 'Extend Property Lifespan', description: 'Regular cleaning and maintenance can prevent long-term damage, extending the life of your buildings exterior and saving on costly repairs.' },
   { icon: Clock, title: 'Save Time and Resources', description: 'Our professional services save you time and resources, allowing you to focus on running your business while we handle the cleaning.' },
@@ -19,19 +19,12 @@ const benefits = [
 ]
 
 const galleryImages = [
-  { src: '/driveway-after.webp', alt: 'Driveway before and after', title: 'Driveway Transformation' },
-  { src: '/before-and-after15.webp', alt: 'Concrete Before and After', title: 'Concrete Cleaning' },
-  { src: '/concrete-beforeandafter.webp', alt: 'Concrete before and after', title: 'Concrete Restoration' },
-  { src: '/frontporch-beforeandafter.webp', alt: 'Front Porch before and after', title: 'Front Porch Makeover' },
-  { src: '/before-and-after16.webp', alt: 'Concrete Before and After', title: 'Concrete Deep Clean' },
-  { src: '/backalley-beforeandafter.webp', alt: 'Back alley before and after', title: 'Alley Cleaning' },
-  { src: '/school-concrete-beforeandafter.webp', alt: 'Concrete before and after', title: 'School Grounds Cleaning' },
-  { src: '/walkway-beforeandafter.webp', alt: 'Concrete before and after', title: 'Walkway Restoration' },
-  { src: '/oilstain-beforeandafter.webp', alt: 'Oil Stain before and after', title: 'Oil Stain Removal' },
-  { src: '/concrete-beforeandafter-2.webp', alt: 'Concrete before and after', title: 'Concrete Revitalization' },
-  { src: '/conrete-beforeandafter-3.webp', alt: 'Concrete before and after', title: 'Concrete Surface Cleaning' },
-  { src: '/parking-lot-beforeandafter.webp', alt: 'Parking Lot before and after', title: 'Parking Lot Cleaning' },
-  { src: '/diveway-beforeandafter.webp', alt: 'Driveway before and after', title: 'Driveway Deep Clean' },
+  { src: '/commercial-building-2.webp', alt: 'Commercial building arial view', title: 'Commercial Building Aerial View' },
+  { src: '/commercial-building.webp', alt: 'Commercial parking lot pressure washing', title: 'Parking Lot Pressure Washing' },
+  { src: '/commercial-building-4.webp', alt: 'Warehouse washing', title: 'Warehouse Exterior Cleaning' },
+  { src: '/commercial-building-5.webp', alt: 'Industrial facility exterior washing', title: 'Industrial Facility Washing' },
+  { src: '/commercial-building-6.webp', alt: 'WWII Museum before and after', title: 'WWII Museum Restoration' },
+  { src: '/school-concrete-beforeandafter.webp', alt: 'School before and after', title: 'School Grounds Transformation' },
 ]
 
 export default function CommercialProperties() {
@@ -119,41 +112,33 @@ export default function CommercialProperties() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-12"
+          id="gallery"
         >
-          <Card className="bg-white dark:bg-gray-800">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-purple-700 dark:text-yellow-300">Our Commercial Cleaning Portfolio</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                {galleryImages.map((image, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="relative aspect-square overflow-hidden rounded-lg group"
-                  >
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-purple-900 bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                      <button
-                        onClick={() => openLightbox(index)}
-                        className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-yellow-400 hover:bg-yellow-500 p-2 rounded-full"
-                      >
-                        <Expand className="w-6 h-6" />
-                      </button>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-purple-800 dark:text-purple-100">Our Commercial Cleaning Portfolio</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            {galleryImages.map((image, index) => (
+              <Card key={index} className="overflow-hidden group bg-white dark:bg-purple-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-0 relative aspect-[4/3]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-purple-900 bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => openLightbox(index)}
+                      className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-yellow-400 hover:bg-yellow-500 p-2 rounded-full"
+                    >
+                      <Expand className="w-6 h-6" />
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </motion.section>
 
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
