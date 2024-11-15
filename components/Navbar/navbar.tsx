@@ -19,8 +19,6 @@ const services = [
   { name: "Gutter Cleaning", href: "/services/gutter-cleaning" },
 ]
 
-
-
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com/" },
   { icon: Twitter, href: "https://twitter.com/" },
@@ -32,6 +30,7 @@ export default function Navbar() {
   const { setTheme, theme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -77,8 +76,8 @@ export default function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
- 
             <NavLink href="/gallery" active={pathname === "/gallery"}>Gallery</NavLink>
+            <NavLink href="/blog" active={pathname === "/blog"}>Blog</NavLink>
             <NavLink href="/contact" active={pathname === "/contact"}>Contact</NavLink>
           </nav>
           <div className="flex-1 flex items-center justify-end space-x-4">
@@ -121,16 +120,26 @@ export default function Navbar() {
                   <NavLink href="/" mobile active={pathname === "/"}>Home</NavLink>
                   <NavLink href="/about" mobile active={pathname === "/about"}>About</NavLink>
                   <div className="space-y-2">
-                    <h3 className="font-medium text-lg text-purple-800 dark:text-purple-200">Services</h3>
-                    <NavLink href="/services" mobile active={pathname === "/services"}>All Services</NavLink>
-                    {services.map((service) => (
-                      <NavLink key={service.href} href={service.href} mobile active={pathname === service.href}>
-                        {service.name}
-                      </NavLink>
-                    ))}
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start text-lg font-medium"
+                      onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    >
+                      Services <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                    </Button>
+                    {isServicesOpen && (
+                      <div className="pl-4 space-y-2">
+                        <NavLink href="/services" mobile active={pathname === "/services"}>All Services</NavLink>
+                        {services.map((service) => (
+                          <NavLink key={service.href} href={service.href} mobile active={pathname === service.href}>
+                            {service.name}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
                   </div>
-              
                   <NavLink href="/gallery" mobile active={pathname === "/gallery"}>Gallery</NavLink>
+                  <NavLink href="/blog" mobile active={pathname === "/blog"}>Blog</NavLink>
                   <NavLink href="/contact" mobile active={pathname === "/contact"}>Contact</NavLink>
                 </nav>
                 <div className="flex items-center justify-center space-x-2 mt-auto py-4 border-t border-purple-200 dark:border-purple-700">

@@ -11,25 +11,25 @@ import { ChevronDown, ArrowRight } from 'lucide-react'
 const blogItems = [
   {
     title: 'Gutter Cleanup',
-    image: '/assets/img/gutterbeforeandafter.webp',
+    image: '/gutterbeforeandafter.webp',
     description: 'Dirty gutters are more than just an eyesore. They\'re a breeding ground for problems. Clogged gutters can lead to water overflow, causing damage to your roof, siding, and foundation. 🏠💧 And if left unattended, they can even invite unwanted guests like mosquitoes and rodents. Clean Slate get your gutters clean and clear of all debris for water to flow smoothly!',
     link: '/gutter-cleaning'
   },
   {
     title: 'Deck Washing',
-    image: '/assets/img/porch-beforeandafter.webp',
+    image: '/porch-beforeandafter.webp',
     description: 'Is your wood deck looking a little worse for wear? 😟 Don\'t worry, we\'ve got you covered! At Clean Slate Pressure Washing Services L.L.C, we specialize in restoring the beauty of wood decks. Our expert team uses gentle yet effective cleaning techniques to remove dirt, mold, and stains, leaving your deck looking refreshed and rejuvenated.',
     link: '/soft-and-pressure-washing'
   },
   {
     title: 'Sidewalks',
-    image: '/assets/img/sidewalk-beforeandafter.webp',
+    image: '/sidewalk-beforeandafter.webp',
     description: 'Are you tired of looking at dull, lifeless sidewalks? Let me introduce you to Clean Slate Pressure Washing Services! 💦 Our team worked wonders on my sidewalk, bringing it back to life and restoring its vibrant appearance.',
     link: '/concrete-washing'
   },
   {
     title: 'Concrete Stains',
-    image: '/assets/img/oilstain-beforeandafter.webp',
+    image: '/oilstain-beforeandafter.webp',
     description: 'Considering environmental and safety concerns, it\'s crucial to remove oil stains from concrete. Protect your surroundings, prevent slips, and contribute to a cleaner environment by taking the initiative to remove oil stains.',
     link: '/blog'
   }
