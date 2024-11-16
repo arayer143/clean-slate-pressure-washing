@@ -73,7 +73,7 @@ export default function Hero() {
                 >
                   <PhoneCall className="h-5 w-5" />
                 </motion.div>
-                Call (504) 352-7963
+                Call Us
               </Button>
               </Link>
             </motion.div>
