@@ -3,55 +3,66 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, PhoneCall, Check, Droplets, Home } from 'lucide-react'
-import { Button } from "../ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "../ui/card"
+import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import Link from 'next/link'
 
 export default function Hero() {
   const [isHovered1, setIsHovered1] = useState(false)
   const [isHovered2, setIsHovered2] = useState(false)
 
   return (
-    <div className="relative bg-[url('/hero-background.jpg')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-purple-900/70 dark:bg-purple-900/90"></div>
+    <div className="relative bg-cover bg-center bg-no-repeat min-h-[calc(85vh-4rem)]" style={{
+      backgroundImage: `url('/cleanslatebanner.webp')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
+      <div className="absolute inset-0 bg-purple-900/10 dark:bg-purple-900/20"></div>
       <div className="relative container mx-auto px-4 py-12 sm:py-16 flex flex-col min-h-[calc(85vh-4rem)]">
         <div className="max-w-3xl mb-12 animate-in fade-in slide-in-from-left duration-1000">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 text-white">
-            Revitalize Your Property with Clean Slate Pressure Washing
-          </h1>
-          <p className="text-base sm:text-lg mb-6 text-black dark:text-white">
-            Professional pressure washing services to make your home or business shine like new.
-          </p>
+          <div className="inline-block bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg mb-4 shadow-lg border-2 border-purple-300 dark:border-purple-500">
+            <h1 className="text-2xl text-center sm:text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white">
+              Revitalize Your Property with Clean Slate Pressure Washing
+            </h1>
+            <p className="text-base sm:text-lg mt-3 mb-6 text-gray-700 dark:text-gray-200">
+              Professional pressure washing services to make your home or business shine like new.
+            </p>
+          </div>
+         
           <div className="flex flex-col sm:flex-row gap-4">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="animate-in fade-in slide-in-from-left duration-1000 delay-300"
             >
-              <Button 
-                size="lg"
-                className="w-full sm:w-auto bg-gold-500 text-black hover:bg-gold-600 shadow-md hover:shadow-lg transition-all duration-300"
-                onMouseEnter={() => setIsHovered1(true)}
-                onMouseLeave={() => setIsHovered1(false)}
-              >
-                Get a Free Quote
-                <motion.div
-                  className="ml-2"
-                  animate={{ x: isHovered1 ? 5 : 0 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              <Link href="/contact" passHref>
+                <Button 
+                  size="lg"
+                  className="w-full sm:w-auto bg-gold-500 text-black hover:bg-gold-600 shadow-md hover:shadow-lg transition-all duration-300"
+                  onMouseEnter={() => setIsHovered1(true)}
+                  onMouseLeave={() => setIsHovered1(false)}
                 >
-                  <ArrowRight className="h-5 w-5" />
-                </motion.div>
-              </Button>
+                  Get a Free Quote
+                  <motion.div
+                    className="ml-2"
+                    animate={{ x: isHovered1 ? 5 : 0 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                  </motion.div>
+                </Button>
+              </Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="animate-in fade-in slide-in-from-left duration-1000 delay-500"
             >
+              <Link href="tel:5043527963">
               <Button 
                 size="lg" 
                 variant="outline"
-                className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-gold-500 text-white hover:bg-gold-500 hover:text-black shadow-md hover:shadow-lg transition-all duration-300"
+                className="w-full sm:w-auto bg-white/60 backdrop-blur-sm border-gold-500 text-black hover:bg-gold-500 hover:text-black shadow-md hover:shadow-lg transition-all duration-300"
                 onMouseEnter={() => setIsHovered2(true)}
                 onMouseLeave={() => setIsHovered2(false)}
               >
@@ -62,8 +73,9 @@ export default function Hero() {
                 >
                   <PhoneCall className="h-5 w-5" />
                 </motion.div>
-                Call Us Now
+                Call (504) 352-7963
               </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -73,7 +85,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <Card className="bg-gradient-to-br from-white/95 to-white/70 dark:from-purple-800/95 dark:to-purple-800/70 shadow-xl hover:shadow-2xl transform transition-all duration-300 backdrop-blur-sm rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom duration-1000 delay-300">
+              <Card className="bg-gradient-to-br from-white/95 to-white/70 dark:from-purple-800/95 dark:to-purple-800/70 shadow-xl hover:shadow-2xl transform transition-all duration-300 backdrop-blur-sm rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom duration-1000 delay-300 border-2 border-purple-300 dark:border-purple-500">
                 <CardHeader className="bg-gradient-to-r from-gold-300/20 to-gold-500/20 dark:from-gold-700/20 dark:to-gold-900/20 py-4">
                   <CardTitle className="flex items-center text-black dark:text-gold-500 text-base">
                     <Check className="mr-2 h-5 w-5" />
@@ -95,7 +107,7 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
               className="md:-mt-6"
             >
-              <Card className="bg-gradient-to-br from-white/95 to-white/70 dark:from-purple-800/95 dark:to-purple-800/70 shadow-xl hover:shadow-2xl transform transition-all duration-300 backdrop-blur-sm rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
+              <Card className="bg-gradient-to-br from-white/95 to-white/70 dark:from-purple-800/95 dark:to-purple-800/70 shadow-xl hover:shadow-2xl transform transition-all duration-300 backdrop-blur-sm rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom duration-1000 delay-500 border-2 border-purple-300 dark:border-purple-500">
                 <CardHeader className="bg-gradient-to-r from-gold-300/20 to-gold-500/20 dark:from-gold-700/20 dark:to-gold-900/20 py-4">
                   <CardTitle className="flex items-center text-black dark:text-gold-500 text-base">
                     <Droplets className="mr-2 h-5 w-5" />
@@ -111,7 +123,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <Card className="bg-gradient-to-br from-white/95 to-white/70 dark:from-purple-800/95 dark:to-purple-800/70 shadow-xl hover:shadow-2xl transform transition-all duration-300 backdrop-blur-sm rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom duration-1000 delay-700">
+              <Card className="bg-gradient-to-br from-white/95 to-white/70 dark:from-purple-800/95 dark:to-purple-800/70 shadow-xl hover:shadow-2xl transform transition-all duration-300 backdrop-blur-sm rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom duration-1000 delay-700 border-2 border-purple-300 dark:border-purple-500">
                 <CardHeader className="bg-gradient-to-r from-gold-300/20 to-gold-500/20 dark:from-gold-700/20 dark:to-gold-900/20 py-4">
                   <CardTitle className="flex items-center text-black dark:text-gold-500 text-base">
                     <Home className="mr-2 h-5 w-5" />

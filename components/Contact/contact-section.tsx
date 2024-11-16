@@ -65,7 +65,7 @@ export default function ContactSection() {
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                  <span className="text-gray-600 dark:text-gray-300">(123) 456-7890</span>
+                  <span className="text-gray-600 dark:text-gray-300"></span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-purple-600 dark:text-purple-400" />
