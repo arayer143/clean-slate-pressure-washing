@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import TestimonialsSection from "@/components/Home-Page/testimonials"
 import Footer from "@/components/Footer/footer"
 import Hero from "@/components/Home-Page/hero"
@@ -32,11 +32,18 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-3">
+      <main className="flex-grow">
         <section className="w-full bg-gray-100 dark:bg-gray-800">
           <Hero />
           <AboutSection />
