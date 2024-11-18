@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="max-w-3xl mb-12 animate-in fade-in slide-in-from-left duration-1000">
           <div className="inline-block bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg mb-4 shadow-lg border-2 border-purple-300 dark:border-purple-500">
             <h1 className="text-2xl text-center sm:text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white">
-              Revitalize Your Property with Clean Slate Pressure Washing
+               Clean Slate Pressure Washing
             </h1>
             <p className="text-base sm:text-lg mt-3 mb-6 text-gray-700 dark:text-gray-200">
               Professional pressure washing services to make your home or business shine like new.

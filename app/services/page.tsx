@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer/footer";
 import Navbar from "@/components/Navbar/navbar";
+import AllServicesPage from "@/components/Services Pages/All-services";
 
 
 
@@ -18,7 +19,7 @@ export default function Services() {
                 <section className="w-full bg-gray-100 dark:bg-gray-800">
         
 
-        
+        <AllServicesPage />
           
                 </section>
         
