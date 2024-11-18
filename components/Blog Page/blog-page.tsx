@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Facebook, Instagram, Linkedin, MessageCircle } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, MessageCircle, Droplets } from 'lucide-react'
 
 const blogPosts = [
   {
@@ -74,10 +74,43 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative overflow-hidden mb-12 bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-800 dark:to-purple-950 text-white w-full"
+      >
+        <div className="relative z-10 text-center py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="mb-8"
+          >
+            <Droplets className="mx-auto h-20 w-20 text-yellow-400 dark:text-yellow-300" />
+          </motion.div>
+          <motion.h1 
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            Our Blog
+          </motion.h1>
+          <motion.p 
+            className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Insights, tips, and stories from the world of pressure washing
+          </motion.p>
+        </div>
+      </motion.div>
+
       {/* Breadcrumbs */}
       <section className="bg-white dark:bg-gray-800 py-4 shadow-sm">
         <div className="container mx-auto px-4">
-     
           <h1 className="text-3xl font-bold mt-2 text-gray-800 dark:text-white">Blog</h1>
         </div>
       </section>
@@ -197,8 +230,6 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-
-
     </main>
   )
 }

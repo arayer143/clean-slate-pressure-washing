@@ -1,186 +1,172 @@
-'use client'
+"use client"
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { motion } from 'framer-motion'
+import { Facebook, Instagram, Linkedin, Mail, Phone, Droplets } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
-import { Facebook,  Instagram, Linkedin, Mail, Phone, User, Target, Award, Leaf, Heart, DollarSign, ArrowRight, Users, Clock } from 'lucide-react'
+const socialLinks = [
+  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
+  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/" },
+  { icon: Linkedin, href: "https://linkedin.com/company/cleanslate" },
+]
 
-export default function AboutUsPage() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
-  }
-
-  const staggerChildren = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
+export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <main className="container mx-auto px-4 py-16">
-        <motion.section 
-          initial="initial"
-          animate="animate"
-          variants={fadeInUp}
-          className="text-center mb-16"
-        >
+    <>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative overflow-hidden mb-12 bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-800 dark:to-purple-950 text-white w-full"
+      >
+        <div className="relative z-10 text-center py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="mb-8"
+          >
+            <Droplets className="mx-auto h-20 w-20 text-yellow-400 dark:text-yellow-300" />
+          </motion.div>
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-purple-800 dark:text-purple-300 mb-4"
-            variants={fadeInUp}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
             About Us
           </motion.h1>
           <motion.p 
-            className="text-xl text-gray-600 dark:text-gray-300"
-            variants={fadeInUp}
+            className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
-            Passionate about creating clean and beautiful spaces
+            Discover the story behind Clean Slate Pressure Washing
           </motion.p>
-        </motion.section>
+        </div>
+      </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
-          variants={staggerChildren}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.div variants={fadeInUp} className="md:col-span-2">
-            <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-                  <div className="bg-purple-100 dark:bg-purple-900 p-6 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-purple-800 dark:text-purple-300 mb-4 flex items-center">
-                      <User className="w-6 h-6 mr-2" />
-                      Our Story
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      We started this business with a passion for transforming spaces and a commitment to excellence. With years of experience in pressure washing and cleaning services, we&apos;ve honed our skills to deliver outstanding results for every client.
-                    </p>
-                  </div>
-                  <div className="bg-purple-50 dark:bg-purple-800 p-6 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-purple-800 dark:text-purple-300 mb-4 flex items-center">
-                      <Target className="w-6 h-6 mr-2" />
-                      Our Mission
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      Our mission is to provide top-quality cleaning services that not only meet but exceed our clients&apos; expectations. We believe in the power of a clean environment to improve lives and businesses, and we&apos;re committed to delivering that transformation with every job.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-          <motion.div variants={fadeInUp} className="flex flex-col justify-between">
-            <Card className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 mb-4">
-              <CardContent className="p-6">
+      <section className="bg-white dark:bg-purple-950 py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 w-full md:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="w-full aspect-[16/9] relative rounded-lg overflow-hidden shadow-xl"
+              >
                 <Image
                   src="/cleanslatelogo.webp"
-                  alt="Company Logo"
-                  width={200}
-                  height={100}
-                  className="w-full h-auto"
+                  alt="Clean Slate Pressure Washing Team"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
                 />
-              </CardContent>
-            </Card>
-            <Card className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-4">Connect With Us</h3>
-                <div className="flex justify-center space-x-4">
-                  {[
-                    { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC", label: "Facebook" },
-                    { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/", label: "Instagram" },
-                    { icon: Linkedin, href: "https://linkedin.com/company/cleanslate", label: "LinkedIn" },
-
-              
-                  ].map((social, index) => (
-                    <motion.div
+              </motion.div>
+              <div>
+                <motion.h2 
+                  className="text-3xl font-bold mb-6 text-black dark:text-white"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  About Clean Slate Pressure Washing
+                </motion.h2>
+                <motion.p 
+                  className="text-lg mb-4 text-black dark:text-white"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  Clean Slate Pressure Washing has been serving our community for over a decade, providing top-notch pressure washing services to homeowners and businesses alike. Our team of experienced professionals is dedicated to restoring and maintaining the beauty of your property using eco-friendly solutions and state-of-the-art equipment.
+                </motion.p>
+                <motion.p 
+                  className="text-lg mb-6 text-black dark:text-white"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  We take pride in our attention to detail and commitment to customer satisfaction. Whether it&apos;s a small residential job or a large commercial project, we approach every task with the same level of dedication and professionalism.
+                </motion.p>
+                <motion.div 
+                  className="flex justify-center space-x-4 mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  <motion.a
+                    href="https://www.google.com/localservices/prolist?spp=Cg0vZy8xMWtwdmRfcngx&scp=CgAaJUNsZWFuIFNsYXRlIFByZXNzdXJlIFdhc2hpbmcgU2VydmljZXMqJUNsZWFuIFNsYXRlIFByZXNzdXJlIFdhc2hpbmcgU2VydmljZXM%3D&q=Clean+Slate+Pressure+Washing+Services&src=2&slp=UhUIARIREg8iDS9nLzExa3B2ZF9yeDE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Image src="/5stargoogle.webp" width={100} height={50} alt="Google 5-star review" className="rounded-lg shadow-md" />
+                  </motion.a>
+                  <motion.a
+                    href="https://www.yelp.com/biz/clean-slate-pressure-washing-services-des-allemands?osq=Pressure+Washing&override_cta=Request+a+Quote"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Image src="/yelpreview.webp" width={100} height={50} alt="Yelp review" className="rounded-lg shadow-md" />
+                  </motion.a>
+                </motion.div>
+                <motion.div 
+                  className="flex space-x-4 mb-6 justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  {socialLinks.map((link, index) => (
+                    <motion.a
                       key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black hover:text-gold-500 dark:text-white dark:hover:text-gold-400 transition-colors duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <Button variant="outline" size="icon" className="rounded-full bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300">
-                        <social.icon className="w-5 h-5 text-purple-600 dark:text-purple-300" />
-                        <span className="sr-only">{social.label}</span>
-                      </Button>
-                    </motion.div>
+                      <link.icon className="h-6 w-6" />
+                      <span className="sr-only">{link.icon.name}</span>
+                    </motion.a>
                   ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </motion.div>
-
-        <motion.section
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold text-purple-800 dark:text-purple-300 mb-6 text-center">Why Choose Us?</h2>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            variants={staggerChildren}
-          >
-            {[
-              { icon: Award, title: "Experience", description: "Years of industry expertise" },
-              { icon: Heart, title: "Quality", description: "Top-notch service and results" },
-              { icon: Clock, title: "Reliability", description: "Dependable and punctual" },
-              { icon: Leaf, title: "Eco-Friendly", description: "Using green cleaning solutions" },
-              { icon: Users, title: "Customer-Focused", description: "Your satisfaction is our priority" },
-              { icon: DollarSign, title: "Affordable", description: "Competitive pricing for all services" },
-            ].map((item, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card className="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <CardHeader>
-                    <CardTitle className="text-xl font-semibold text-purple-700 dark:text-purple-300 flex items-center">
-                      <item.icon className="w-5 h-5 mr-2" />
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.section>
-
-        <motion.section
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold text-purple-800 dark:text-purple-300 mb-6 text-center">Get in Touch</h2>
-          <Card className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <CardContent className="flex flex-col items-center p-6">
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-center">
-                We&apos;re always happy to answer any questions you might have. Feel free to reach out!
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" className="flex items-center space-x-2 group">
-                  <Mail className="w-4 h-4" />
-                  <span>Email Us</span>
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Button>
-                <Button variant="outline" className="flex items-center space-x-2 group">
-                  <Phone className="w-4 h-4" />
-                  <span>Call Us</span>
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Button>
+                </motion.div>
+                <motion.div 
+                  className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1 }}
+                >
+                  <Button 
+                    size="lg"
+                    className="bg-gold-500 text-black hover:bg-gold-600 shadow-md hover:shadow-lg transition-all duration-300"
+                    onClick={() => window.location.href = 'mailto:Rickeynaquin@cleanslatepressurewashingnola.com'}
+                  >
+                    <Mail className="mr-2 h-5 w-5" />
+                    Email Us
+                  </Button>
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="bg-white/10 backdrop-blur-sm border-gold-500 text-black hover:bg-gold-500 hover:text-black shadow-md hover:shadow-lg transition-all duration-300 dark:text-white dark:hover:text-black"
+                    onClick={() => window.location.href = 'tel:5043527963'}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Call Now
+                  </Button>
+                </motion.div>
               </div>
-            </CardContent>
-          </Card>
-        </motion.section>
-      </main>
-    </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
