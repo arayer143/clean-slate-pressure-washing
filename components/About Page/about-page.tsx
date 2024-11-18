@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 
 import { Facebook,  Instagram, Linkedin, Mail, Phone, User, Target, Award, Leaf, Heart, DollarSign, ArrowRight, Users, Clock } from 'lucide-react'
 
-export default function AboutPage() {
+export default function AboutUsPage() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },

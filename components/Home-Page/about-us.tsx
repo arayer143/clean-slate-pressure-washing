@@ -16,19 +16,19 @@ export default function AboutUs() {
     <section className="bg-white dark:bg-purple-950 py-24 mt-24">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 w-full md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="w-full h-full min-h-[400px] relative rounded-lg overflow-hidden shadow-xl"
+              className="w-full aspect-[16/9] relative rounded-lg overflow-hidden shadow-xl"
             >
               <Image
                 src="/cleanslatelogo.webp"
                 alt="Clean Slate Pressure Washing Team"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover bg-purple-950 dark:bg-slate-800"
+                className="object-cover"
                 priority
               />
             </motion.div>
