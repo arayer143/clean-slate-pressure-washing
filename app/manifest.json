@@ -49,7 +49,7 @@
         "name": "Book a Service",
         "short_name": "Book",
         "description": "Book a pressure washing service",
-        "url": "/book",
+        "url": "/contact",
         "icons": [{ "src": "/book-icon.png", "sizes": "192x192" }]
       },
       {
