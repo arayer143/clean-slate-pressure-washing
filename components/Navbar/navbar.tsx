@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from "../ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from "../ui/dropdown-menu"
-import { Sun, Moon, Menu, ChevronDown, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Sun, Moon, Menu, ChevronDown, Facebook, Instagram, Linkedin } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 
@@ -21,7 +21,6 @@ const services = [
 
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com/" },
-  { icon: Twitter, href: "https://twitter.com/" },
   { icon: Instagram, href: "https://instagram.com/" },
   { icon: Linkedin, href: "https://linkedin.com/in/" },
 ]
