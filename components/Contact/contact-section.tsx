@@ -62,22 +62,36 @@ export default function ContactSection() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-purple-700 dark:text-purple-300">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                  <span className="text-gray-600 dark:text-gray-300">504-352-7963</span>
+              <CardContent className="space-y-4 flex flex-col items-center text-center">
+                <div className="flex flex-col items-center space-y-2">
+                  <Button 
+                    variant="outline" 
+                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300"
+                    asChild
+                  >
+                    <a href="tel:5043527963">
+                      <Phone className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" />
+                      Call Me
+                    </a>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300"
+                    asChild
+                  >
+                    <a href="mailto:Rickeynaquin@cleanslatepressurewashingnola.com">
+                      <Mail className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" />
+                      Email Me
+                    </a>
+                  </Button>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Rickeynaquin@cleanslatepressurewashingnola.com</span>
-                </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center space-x-3">
                   <MapPin className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   <span className="text-gray-600 dark:text-gray-300">123 Main St, City, State 12345</span>
                 </div>
-                <div className="pt-4">
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">Follow Us</h3>
-                  <div className="flex space-x-4">
+                <div className="pt-4 w-full">
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2 text-center">Follow Us</h3>
+                  <div className="flex justify-center space-x-4">
                     {[
                       { icon: Facebook, label: "Facebook" },
                       { icon: Instagram, label: "Instagram" },
@@ -146,4 +160,3 @@ export default function ContactSection() {
     </section>
   )
 }
-

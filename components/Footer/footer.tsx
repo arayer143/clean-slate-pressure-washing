@@ -71,7 +71,7 @@ export default function Footer() {
                     <span>Call Us</span>
                   </Button>
                 </Link>
-                <Link href="mailto:cleanslatepressurewashingservices@gmail.com">
+                <Link href="Rickeynaquin@cleanslatepressurewashingnola.com">
                   <Button variant="outline" size="sm" className="flex items-center space-x-2 border-purple-600 text-purple-600 hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900">
                     <Mail className="h-4 w-4" />
                     <span>Email Us</span>
