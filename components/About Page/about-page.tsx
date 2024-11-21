@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Facebook, Instagram, Linkedin, Mail, Phone, Droplets } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import PageBanner from "@/components/page-banner"
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
@@ -14,41 +15,12 @@ const socialLinks = [
 export default function AboutUs() {
   return (
     <>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="relative overflow-hidden mb-12 bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-800 dark:to-purple-950 text-white w-full"
-      >
-        <div className="relative z-10 text-center py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className="mb-8"
-          >
-            <Droplets className="mx-auto h-20 w-20 text-yellow-400 dark:text-yellow-300" />
-          </motion.div>
-          <motion.h1 
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            About Us
-          </motion.h1>
-          <motion.p 
-            className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            Discover the story behind Clean Slate Pressure Washing
-          </motion.p>
-        </div>
-      </motion.div>
+      <PageBanner 
+        title="About Us" 
+        description="Discover the story behind Clean Slate Pressure Washing"
+      />
 
-      <section className="bg-white dark:bg-purple-950 py-24">
+      <section className="bg-white dark:bg-purple-950 py-16 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 w-full md:grid-cols-2 gap-12 items-center">

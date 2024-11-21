@@ -108,12 +108,6 @@ export default function BlogPage() {
         </div>
       </motion.div>
 
-      {/* Breadcrumbs */}
-      <section className="bg-white dark:bg-gray-800 py-4 shadow-sm">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold mt-2 text-gray-800 dark:text-white">Blog</h1>
-        </div>
-      </section>
 
       {/* Blog Section */}
       <section className="py-12">
