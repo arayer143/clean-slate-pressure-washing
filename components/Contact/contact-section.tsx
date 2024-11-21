@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function ContactSection() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
@@ -65,11 +65,11 @@ export default function ContactSection() {
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                  <span className="text-gray-600 dark:text-gray-300"></span>
+                  <span className="text-gray-600 dark:text-gray-300">504-352-7963</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                  <span className="text-gray-600 dark:text-gray-300">info@example.com</span>
+                  <span className="text-gray-600 dark:text-gray-300">Rickeynaquin@cleanslatepressurewashingnola.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -80,7 +80,6 @@ export default function ContactSection() {
                   <div className="flex space-x-4">
                     {[
                       { icon: Facebook, label: "Facebook" },
-                      { icon: Twitter, label: "Twitter" },
                       { icon: Instagram, label: "Instagram" },
                       { icon: Linkedin, label: "LinkedIn" },
                     ].map((social, index) => (
@@ -147,3 +146,4 @@ export default function ContactSection() {
     </section>
   )
 }
+
