@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,6 +9,7 @@ const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
   { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/" },
   { icon: Linkedin, href: "http://www.linkedin.com/in/rickey-naquin-719008297" },
+
 ]
 
 export default function Footer() {
@@ -55,14 +56,6 @@ export default function Footer() {
                   <MapPin className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
                   <span>Des Allemands, LA 70030</span>
                 </li>
-                <li className="flex items-center space-x-2 justify-center sm:justify-start">
-                  <Phone className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-                  <span>(504) 352-7963</span>
-                </li>
-                <li className="flex items-center space-x-2 justify-center sm:justify-start">
-                  <Mail className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-                  <span>cleanslatepressurewashingservices@gmail.com</span>
-                </li>
               </ul>
               <div className="flex space-x-2 pt-2">
                 <Link href="tel:5043527963">
@@ -71,7 +64,7 @@ export default function Footer() {
                     <span>Call Us</span>
                   </Button>
                 </Link>
-                <Link href="Rickeynaquin@cleanslatepressurewashingnola.com">
+                <Link href="mailto:Rickeynaquin@cleanslatepressurewashingnola.com">
                   <Button variant="outline" size="sm" className="flex items-center space-x-2 border-purple-600 text-purple-600 hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900">
                     <Mail className="h-4 w-4" />
                     <span>Email Us</span>
@@ -83,9 +76,20 @@ export default function Footer() {
         </div>
         <Separator className="my-8 bg-purple-200 dark:bg-purple-700" />
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-sm text-purple-700 dark:text-purple-300 text-center md:text-left">
-            © {new Date().getFullYear()} Clean Slate Pressure Washing. All rights reserved.
-          </p>
+          <div className="text-sm text-purple-700 dark:text-purple-300 text-center md:text-left space-y-2">
+            <p>
+              © {new Date().getFullYear()} Clean Slate Pressure Washing. All rights reserved.
+            </p>
+            <Link 
+              href="https://www.raydunnsolutions.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-purple-600 bg-purple-100 border border-purple-200 rounded-md hover:bg-purple-200 dark:text-purple-300 dark:bg-purple-900 dark:border-purple-700 dark:hover:bg-purple-800 transition-colors duration-200"
+            >
+              Website by RayDunn Web Solutions
+              <span className="sr-only">(opens in a new tab)</span>
+            </Link>
+          </div>
           <div className="flex items-center space-x-4">
             <div className="flex space-x-2">
               {socialLinks.map((social) => (

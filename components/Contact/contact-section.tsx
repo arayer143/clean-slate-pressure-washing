@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
 
 export default function ContactSection() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
@@ -58,15 +58,15 @@ export default function ContactSection() {
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div {...fadeInUp}>
-            <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-purple-700 dark:text-purple-300">Contact Information</CardTitle>
+            <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 lg:h-auto">
+              <CardHeader className="lg:py-4">
+                <CardTitle className="text-2xl font-bold text-center text-purple-700 dark:text-purple-300 lg:text-xl">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 flex flex-col items-center text-center">
+              <CardContent className="space-y-4 flex flex-col items-center text-center lg:space-y-2 lg:py-2">
                 <div className="flex flex-col items-center space-y-2">
                   <Button 
                     variant="outline" 
-                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300"
+                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300 lg:w-36 lg:text-sm lg:py-1"
                     asChild
                   >
                     <a href="tel:5043527963">
@@ -76,7 +76,7 @@ export default function ContactSection() {
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300"
+                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300 lg:w-36 lg:text-sm lg:py-1"
                     asChild
                   >
                     <a href="mailto:Rickeynaquin@cleanslatepressurewashingnola.com">
@@ -85,20 +85,17 @@ export default function ContactSection() {
                     </a>
                   </Button>
                 </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <MapPin className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                  <span className="text-gray-600 dark:text-gray-300">123 Main St, City, State 12345</span>
-                </div>
-                <div className="pt-4 w-full">
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2 text-center">Follow Us</h3>
-                  <div className="flex justify-center space-x-4">
+    
+                <div className="pt-4 w-full lg:pt-2">
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2 text-center lg:text-base lg:mb-1">Follow Us</h3>
+                  <div className="flex justify-center space-x-4 lg:space-x-2 py-4">
                     {[
                       { icon: Facebook, label: "Facebook" },
                       { icon: Instagram, label: "Instagram" },
                       { icon: Linkedin, label: "LinkedIn" },
                     ].map((social, index) => (
-                      <Button key={index} variant="outline" size="icon" className="rounded-full bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300">
-                        <social.icon className="w-5 h-5 text-purple-600 dark:text-purple-300" />
+                      <Button key={index} variant="outline" size="icon" className="rounded-full bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300 lg:w-8 lg:h-8">
+                        <social.icon className="w-5 h-5 text-purple-600 dark:text-purple-300 lg:w-4 lg:h-4" />
                         <span className="sr-only">{social.label}</span>
                       </Button>
                     ))}
@@ -110,7 +107,7 @@ export default function ContactSection() {
           <motion.div {...fadeInUp}>
             <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-purple-700 dark:text-purple-300">Send Us a Message</CardTitle>
+                <CardTitle className="text-2xl text-center font-bold text-purple-700 dark:text-purple-300">Send Us a Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -160,3 +157,4 @@ export default function ContactSection() {
     </section>
   )
 }
+
