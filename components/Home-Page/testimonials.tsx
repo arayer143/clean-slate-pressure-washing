@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-import { testimonials } from "../Data/testimonials"
+import { testimonials } from "../../lib/testimonials"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import useEmblaCarousel from 'embla-carousel-react'

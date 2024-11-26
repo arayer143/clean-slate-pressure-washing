@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Expand, ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { galleryItemsHomepage } from "../Data/gallery-items-homepage"
+import { galleryItemsHomepage } from "../../lib/gallery-items-homepage"
 
 export default function PhotoGalleryhome() {
   const [isOpen, setIsOpen] = React.useState(false)

@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Expand, ChevronLeft, ChevronRight, X, Play, Droplets } from 'lucide-react'
-import { galleryItems, GalleryItem } from "../Data/gallery-data"
+import { galleryItems, GalleryItem } from "../../lib/gallery-data"
 
 // Fisher-Yates shuffle algorithm
 function shuffleArray<T>(array: T[]): T[] {
