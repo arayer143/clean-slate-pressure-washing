@@ -20,12 +20,9 @@ export default function FenceCleaning() {
   ]
 
   const galleryImages = [
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Wooden fence before and after cleaning', title: 'Wooden Fence Transformation' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Vinyl fence cleaning process', title: 'Vinyl Fence Cleaning' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Metal fence restoration', title: 'Metal Fence Restoration' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Privacy fence cleaning', title: 'Privacy Fence Cleaning' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Garden fence transformation', title: 'Garden Fence Makeover' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Commercial fence cleaning', title: 'Commercial Fence Cleaning' },
+    { src: '/public/fence-before.webp', alt: 'Wooden fence before and after cleaning', title: 'Wooden Fence Transformation' },
+    { src: '/public/fence-after.webp', alt: 'Vinyl fence cleaning process', title: 'Vinyl Fence Cleaning' },
+
   ]
 
   const [isOpen, setIsOpen] = React.useState(false)
