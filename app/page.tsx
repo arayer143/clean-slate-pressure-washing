@@ -8,6 +8,7 @@ import PhotoGalleryhome from "@/components/Home-Page/photoGallery"
 import ServicesSection from "@/components/Home-Page/our-services"
 import CTASection from "@/components/Home-Page/call-to-action"
 import BlogPreview from "@/components/Home-Page/blog-preview"
+import { CookieConsentPopup } from '@/components/cookie-consent-popup'
 
 export const metadata: Metadata = {
   title: 'Home | Clean Slate Pressure Washing',
@@ -52,6 +53,7 @@ export default function Home() {
           <BlogPreview />
           <PhotoGalleryhome />
           <TestimonialsSection />
+          <CookieConsentPopup />
         </section>
         <section className="w-full">
           <Footer />
