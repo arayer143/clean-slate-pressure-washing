@@ -20,8 +20,8 @@ export default function FenceCleaning() {
   ]
 
   const galleryImages = [
-    { src: '/public/fence-before.webp', alt: 'Wooden fence before and after cleaning', title: 'Wooden Fence Transformation' },
-    { src: '/public/fence-after.webp', alt: 'Vinyl fence cleaning process', title: 'Vinyl Fence Cleaning' },
+    { src: '/fence-before.webp', alt: 'Wooden fence before and after cleaning', title: 'Wooden Fence Transformation' },
+    { src: '/fence-after.webp', alt: 'Vinyl fence cleaning process', title: 'Vinyl Fence Cleaning' },
 
   ]
 
