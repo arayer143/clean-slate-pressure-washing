@@ -20,6 +20,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://www.cleanslate-pressurewashing.com/about',
+  },
 }
 
 export default function About() {
@@ -35,3 +38,4 @@ export default function About() {
     </div>
   )
 }
+

@@ -6,7 +6,6 @@ import BlogPage from "@/components/Blog Page/blog-page"
 export const metadata: Metadata = {
   title: 'Blog | Clean Slate Pressure Washing',
   description: 'Read the latest articles and insights about pressure washing techniques, tips, and industry news from Clean Slate Pressure Washing.',
-  keywords: ['pressure washing blog', 'cleaning tips', 'industry news', 'Des Allemands', 'Louisiana'],
   openGraph: {
     title: 'Clean Slate Pressure Washing Blog',
     description: 'Read the latest articles and insights about pressure washing techniques, tips, and industry news.',
@@ -27,6 +26,9 @@ export const metadata: Metadata = {
     description: 'Read the latest articles and insights about pressure washing techniques, tips, and industry news.',
     images: ['https://www.cleanslate.com/cleanslate'],
   },
+  alternates: {
+    canonical: 'https://www.cleanslate.com/blog',
+  },
 }
 
 export default function Blog() {
@@ -44,3 +46,4 @@ export default function Blog() {
     </div>
   )
 }
+
