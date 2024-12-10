@@ -20,12 +20,12 @@ export default function ConcreteWashing() {
   ]
 
   const galleryImages = [
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Driveway before and after', title: 'Driveway Transformation' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Concrete Before and After', title: 'Concrete Cleaning' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Front Porch before and after', title: 'Front Porch Restoration' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Back alley before and after', title: 'Back Alley Cleaning' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Sidewalk before and after', title: 'Sidewalk Cleaning' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Patio before and after', title: 'Patio Restoration' },
+    { src: '/before-and-after13.webp', alt: 'Sidewalk before and after', title: 'Driveway Transformation' },
+    { src: '/concrete-beforeandafter-2.webp', alt: 'Concrete Before and After', title: 'Concrete Cleaning' },
+    { src: '/concrete-beforeandafter.webp', alt: 'Front Porch before and after', title: 'Front Porch Restoration' },
+    { src: '/conrete-beforeandafter-3.webp', alt: 'Back alley before and after', title: 'Back Alley Cleaning' },
+    { src: '/conrete-beforeandafter-4.webp', alt: 'Sidewalk before and after', title: 'Sidewalk Cleaning' },
+    { src: '/before-and-after5.webp', alt: 'Patio before and after', title: 'Patio Restoration' },
   ]
 
   const [isOpen, setIsOpen] = React.useState(false)

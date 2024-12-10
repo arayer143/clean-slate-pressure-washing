@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     icon: '/cleanslatelogo.jpg',
     apple: '/cleanslatelogo.jpg',
   },
+  alternates: {
+    canonical: 'https://www.cleanslatepressurewashing.com/services/gutter-cleaning',
+  },
 }
 
 export default function GutterCleaningPage() {
