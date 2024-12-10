@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'About Clean Slate Pressure Washing',
     description: 'Discover the story behind Clean Slate Pressure Washing and our dedication to excellence in pressure washing services.',
     type: 'website',
-    url: 'https://www.cleanslate-pressurewashing.com/about',
+    url: 'https://www.cleanslatepressurewashing.com/about',
     images: [
       {
         url: '/cleanslatelogo.jpg',
@@ -21,8 +21,21 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://www.cleanslate-pressurewashing.com/about',
+    canonical: 'https://www.cleanslatepressurewashing.com/about',
   },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  mainEntity: {
+    '@type': 'LocalBusiness',
+    name: 'Clean Slate Pressure Washing',
+    description: 'Clean Slate Pressure Washing is committed to providing top-quality pressure washing services with a focus on customer satisfaction and environmental responsibility.',
+    image: '/cleanslatelogo.jpg',
+    areaServed: 'Local Area',
+    priceRange: '$$'
+  }
 }
 
 export default function About() {
@@ -35,7 +48,10 @@ export default function About() {
         </section>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </div>
   )
 }
-

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ['https://www.cleanslate.com/cleanslate'],
   },
   alternates: {
-    canonical: 'https://www.cleanslate.com/blog',
+    canonical: 'https://www.cleanslatepressurewashingnola.com/blog',
   },
 }
 
