@@ -48,6 +48,14 @@ const jsonLd = {
   url: 'https://cleanslatepressurewashingnola.com',
   logo: 'https://cleanslatepressurewashingnola.com/cleanslatelogo.webp',
   image: 'https://cleanslatepressurewashingnola.com/cleanslatelogo.webp',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '206 Mitchell Ln',
+    addressLocality: 'Des Allemands',
+    addressRegion: 'LA',
+    postalCode: '70030',
+    addressCountry: 'US'
+  },
   areaServed: [
     {
       '@type': 'State',
@@ -123,4 +131,3 @@ export default function Home() {
     </div>
   )
 }
-
