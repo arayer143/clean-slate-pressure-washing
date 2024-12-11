@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Our Services | Clean Slate Pressure Washing NOLA',
   description: 'Explore our professional cleaning services including soft washing, pressure washing, and more for homes and businesses in Louisiana, Mississippi, and Texas.',
   openGraph: {
-    title: 'Professional Cleaning Services | Clean Slate Pressure Washing NOLA',
+    title: 'Professional Pressure Washing Services | Clean Slate Pressure Washing NOLA',
     description: 'Discover our expert cleaning solutions for homes and businesses in Louisiana. From soft washing to pressure washing.',
     url: 'https://cleanslatepressurewashingnola.com/services',
     siteName: 'Clean Slate Pressure Washing NOLA',
