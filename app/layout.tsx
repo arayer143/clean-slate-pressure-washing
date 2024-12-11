@@ -3,16 +3,20 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import { Suspense } from 'react';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
+  display: 'swap',
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -71,13 +75,11 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   verification: {
     google: 'your-google-verification-code',
-    // Add other verification codes if needed
   },
   alternates: {
     canonical: 'https://cleanslatepressurewashingnola.com',
     languages: {
       'en-US': 'https://cleanslatepressurewashingnola.com',
-      // Add other language versions if applicable
     },
   },
 }
@@ -104,7 +106,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Suspense fallback={<div>Loading...</div>}>
+            {children}
+          </Suspense>
           <Toaster />
         </ThemeProvider>
       </body>
