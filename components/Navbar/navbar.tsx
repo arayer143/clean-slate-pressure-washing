@@ -20,9 +20,9 @@ const services = [
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/", name: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com/", name: "Instagram" },
-  { icon: Linkedin, href: "https://linkedin.com/in/", name: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC", name: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/", name: "Instagram" },
+  { icon: Linkedin, href: "http://www.linkedin.com/in/rickey-naquin-719008297", name: "LinkedIn" },
 ]
 
 export default function Navbar() {

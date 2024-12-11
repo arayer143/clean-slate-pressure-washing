@@ -93,9 +93,9 @@ export default function ContactSection() {
                   <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2 text-center lg:text-base lg:mb-1">Follow Us</h3>
                   <div className="flex justify-center space-x-4 lg:space-x-2 py-4">
                     {[
-                      { icon: Facebook, label: "Facebook" },
-                      { icon: Instagram, label: "Instagram" },
-                      { icon: Linkedin, label: "LinkedIn" },
+                      { icon: Facebook, label: "Facebook" , name: "Facebook" },
+                      { icon: Instagram, label: "Instagram", name: "Instagram" },
+                      { icon: Linkedin, label: "LinkedIn", name: "LinkedIn" },
                     ].map((social, index) => (
                       <Button key={index} variant="outline" size="icon" className="rounded-full bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300 lg:w-8 lg:h-8">
                         <social.icon className="w-5 h-5 text-purple-600 dark:text-purple-300 lg:w-4 lg:h-4" />
