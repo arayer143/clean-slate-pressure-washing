@@ -29,12 +29,10 @@ export default function GutterCleaning() {
   ]
 
   const galleryImages = [
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Gutter before and after cleaning', title: 'Gutter Transformation' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Clogged gutter cleanup', title: 'Clogged Gutter Cleanup' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Gutter maintenance process', title: 'Gutter Maintenance Process' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Clean flowing gutter', title: 'Clean Flowing Gutter' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Gutter cleaning equipment', title: 'Our Cleaning Equipment' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Before and after gutter cleaning', title: 'Before and After Comparison' },
+    { src: '/gutterbeforeandafter.webp', alt: 'Gutter before and after cleaning', title: 'Gutter Transformation' },
+    { src: '/gutter-beforeand-after.webp', alt: 'Clogged gutter cleanup', title: 'Clogged Gutter Cleanup' },
+    { src: '/before-and-after7.webp', alt: 'Gutter maintenance process', title: 'Gutter Maintenance Process' },
+
   ]
 
   const [isOpen, setIsOpen] = React.useState(false)
@@ -73,7 +71,7 @@ export default function GutterCleaning() {
                 <Link href="/contact">Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="bg-white text-purple-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700">
-                <Link href="#benefits">Learn More</Link>
+                <Link href="/blog">Learn More</Link>
               </Button>
             </div>
           </div>

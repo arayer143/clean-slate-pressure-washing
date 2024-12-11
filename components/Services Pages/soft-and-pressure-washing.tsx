@@ -49,7 +49,7 @@ export default function SoftAndPressureWashing() {
                 <Link href="/contact">Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="bg-white text-purple-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700">
-                <Link href="#benefits">Learn More</Link>
+                <Link href="/blog">Learn More</Link>
               </Button>
             </div>
           </div>
