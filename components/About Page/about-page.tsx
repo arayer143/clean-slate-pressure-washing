@@ -76,6 +76,7 @@ export default function AboutUs() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label="View our Google 5-star reviews"
                   >
                     <Image src="/5stargoogle.webp" width={100} height={50} alt="Google 5-star review" className="rounded-lg shadow-md" />
                   </motion.a>
@@ -85,6 +86,7 @@ export default function AboutUs() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label="View our Yelp reviews"
                   >
                     <Image src="/yelpreview.webp" width={100} height={50} alt="Yelp review" className="rounded-lg shadow-md" />
                   </motion.a>
@@ -104,9 +106,9 @@ export default function AboutUs() {
                       className="text-black hover:text-gold-500 dark:text-white dark:hover:text-gold-400 transition-colors duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
+                      aria-label={`Visit our ${link.name} page`}
                     >
                       <link.icon className="h-6 w-6" />
-                      <span className="sr-only">{link.icon.name}</span>
                     </motion.a>
                   ))}
                 </motion.div>
@@ -120,6 +122,7 @@ export default function AboutUs() {
                     size="lg"
                     className="bg-gold-500 text-black hover:bg-gold-600 shadow-md hover:shadow-lg transition-all duration-300"
                     onClick={() => window.location.href = 'mailto:Rickeynaquin@cleanslatepressurewashingnola.com'}
+                    aria-label="Email Clean Slate Pressure Washing"
                   >
                     <Mail className="mr-2 h-5 w-5" />
                     Email Us
@@ -129,6 +132,7 @@ export default function AboutUs() {
                     variant="outline"
                     className="bg-white/10 backdrop-blur-sm border-gold-500 text-black hover:bg-gold-500 hover:text-black shadow-md hover:shadow-lg transition-all duration-300 dark:text-white dark:hover:text-black"
                     onClick={() => window.location.href = 'tel:5043527963'}
+                    aria-label="Call Clean Slate Pressure Washing"
                   >
                     <Phone className="mr-2 h-5 w-5" />
                     Call Now
