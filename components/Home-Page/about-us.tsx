@@ -6,9 +6,9 @@ import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
 import { Button } from "../ui/button"
 
 const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
-  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/" },
-  { icon: Linkedin, href: "https://linkedin.com/company/cleanslate" },
+  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC", name: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/", name: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com/company/cleanslate", name: "LinkedIn" },
 ]
 
 export default function AboutUs() {
@@ -97,9 +97,9 @@ export default function AboutUs() {
                     className="text-black hover:text-gold-500 dark:text-white dark:hover:text-gold-400 transition-colors duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
+                    aria-label={`Visit our ${link.name} page`}
                   >
                     <link.icon className="h-6 w-6" />
-                    <span className="sr-only">{link.icon.name}</span>
                   </motion.a>
                 ))}
               </motion.div>
@@ -134,3 +134,4 @@ export default function AboutUs() {
     </section>
   )
 }
+
