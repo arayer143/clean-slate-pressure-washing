@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from "../ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from "../ui/dropdown-menu"
-import { Sun, Moon, Menu, ChevronDown, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Sun, Moon, Menu, ChevronDown, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 
@@ -20,9 +20,9 @@ const services = [
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/" },
-  { icon: Instagram, href: "https://instagram.com/" },
-  { icon: Linkedin, href: "https://linkedin.com/in/" },
+  { icon: Facebook, href: "https://facebook.com/", name: "Facebook" },
+  { icon: Instagram, href: "https://instagram.com/", name: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com/in/", name: "LinkedIn" },
 ]
 
 export default function Navbar() {
@@ -87,9 +87,9 @@ export default function Navbar() {
                     variant="ghost" 
                     size="icon" 
                     className="w-8 h-8 hover:bg-gold-500 hover:text-purple-900 dark:hover:text-purple-100"
+                    aria-label={`Visit our ${social.name} page`}
                   >
                     <social.icon className="h-4 w-4" />
-                    <span className="sr-only">{social.icon.name}</span>
                   </Button>
                 </Link>
               ))}
@@ -148,9 +148,9 @@ export default function Navbar() {
                         variant="ghost" 
                         size="icon" 
                         className="w-8 h-8 hover:bg-gold-500 hover:text-purple-900 dark:hover:text-purple-100"
+                        aria-label={`Visit our ${social.name} page`}
                       >
                         <social.icon className="h-4 w-4" />
-                        <span className="sr-only">{social.icon.name}</span>
                       </Button>
                     </Link>
                   ))}
