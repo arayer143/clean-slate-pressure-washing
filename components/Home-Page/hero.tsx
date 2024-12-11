@@ -4,10 +4,10 @@ import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, PhoneCall, Check, Droplets, Home } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import Link from 'next/link'
 
-const MotionLink = motion.create(Link)
+const MotionLink = motion(Link)
 
 export default function Hero() {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null)
@@ -103,36 +103,33 @@ export default function Hero() {
               { 
                 title: "Why Choose Us", 
                 icon: Check, 
-                content: (
-                  <ul className="list-disc list-inside space-y-1 text-sm text-black dark:text-white">
-                    <li>Experienced professionals</li>
-                    <li>Eco-friendly cleaning solutions</li>
-                    <li>State-of-the-art equipment</li>
-                    <li>100% satisfaction guarantee</li>
-                  </ul>
-                )
+                content: [
+                  "Experienced professionals",
+                  "Eco-friendly cleaning solutions",
+                  "State-of-the-art equipment",
+                  "100% satisfaction guarantee"
+                ]
               },
               { 
                 title: "Soft & Pressure Washing", 
                 icon: Droplets, 
-                content: (
-                  <p className="text-sm text-black dark:text-white">
-                    We offer both soft washing for delicate surfaces and high-pressure cleaning for tough stains. Our experts know exactly which method to use for optimal results without damaging your property.
-                  </p>
-                ),
+                content: [
+                  "Soft washing for delicate surfaces",
+                  "High-pressure cleaning for tough stains",
+                  "Expert method selection",
+                  "Damage-free optimal results"
+                ],
                 className: "md:-mt-6"
               },
               { 
                 title: "Concrete & Roof Washing", 
                 icon: Home, 
-                content: (
-                  <ul className="list-disc list-inside space-y-1 text-sm text-black dark:text-white">
-                    <li>Driveway and sidewalk cleaning</li>
-                    <li>Patio and deck restoration</li>
-                    <li>Gentle roof cleaning</li>
-                    <li>Gutter brightening</li>
-                  </ul>
-                )
+                content: [
+                  "Driveway and sidewalk cleaning",
+                  "Patio and deck restoration",
+                  "Gentle roof cleaning",
+                  "Gutter brightening"
+                ]
               }
             ].map((item, index) => (
               <motion.div
@@ -149,15 +146,22 @@ export default function Hero() {
                   y: { duration: 0.5, delay: index * 0.2 }
                 }}
               >
-                <Card className="bg-gradient-to-br from-white/95 to-white/70 dark:from-purple-800/95 dark:to-purple-800/70 shadow-xl hover:shadow-2xl transform transition-all duration-300 backdrop-blur-sm rounded-xl overflow-hidden border-2 border-purple-300 dark:border-purple-500">
-                  <CardHeader className="bg-gradient-to-r from-gold-300/20 to-gold-500/20 dark:from-gold-700/20 dark:to-gold-900/20 py-4">
-                    <CardTitle className="flex items-center text-black dark:text-gold-500 text-base">
-                      <item.icon className="mr-2 h-5 w-5" />
+                <Card className="bg-white dark:bg-purple-900 shadow-xl hover:shadow-2xl transform transition-all duration-300 overflow-hidden border-2 border-purple-300 dark:border-purple-500 h-full">
+                  <CardHeader className="bg-gradient-to-r from-gold-200 to-gold-100 dark:from-gold-300 dark:to-gold-600 dark:text-black py-4">
+                    <h2 className="flex items-center text-purple-900 dark:text-black text-lg font-bold">
+                      <item.icon className="mr-2 h-6 w-6" />
                       {item.title}
-                    </CardTitle>
+                    </h2>
                   </CardHeader>
-                  <CardContent className="pt-3 pb-4">
-                    {item.content}
+                  <CardContent className="pt-6 pb-4">
+                    <ul className="space-y-2">
+                      {item.content.map((point, i) => (
+                        <li key={i} className="flex items-start">
+                          <Check className="h-5 w-5 text-gold-500 mr-2 mt-0.5" />
+                          <span className="text-sm text-gray-700 dark:text-gray-200">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </motion.div>
