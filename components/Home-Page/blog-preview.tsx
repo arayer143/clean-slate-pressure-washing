@@ -13,19 +13,19 @@ const blogItems = [
     title: 'Gutter Cleanup',
     image: '/gutterbeforeandafter.webp',
     description: 'Dirty gutters are more than just an eyesore. They\'re a breeding ground for problems. Clogged gutters can lead to water overflow, causing damage to your roof, siding, and foundation. 🏠💧 And if left unattended, they can even invite unwanted guests like mosquitoes and rodents. Clean Slate get your gutters clean and clear of all debris for water to flow smoothly!',
-    link: '/gutter-cleaning'
+    link: '/services/gutter-cleaning'
   },
   {
     title: 'Deck Washing',
     image: '/porch-beforeandafter.webp',
     description: 'Is your wood deck looking a little worse for wear? 😟 Don\'t worry, we\'ve got you covered! At Clean Slate Pressure Washing Services L.L.C, we specialize in restoring the beauty of wood decks. Our expert team uses gentle yet effective cleaning techniques to remove dirt, mold, and stains, leaving your deck looking refreshed and rejuvenated.',
-    link: '/soft-and-pressure-washing'
+    link: '/services/soft-and-pressure-washing'
   },
   {
     title: 'Sidewalks',
     image: '/sidewalk-beforeandafter.webp',
     description: 'Are you tired of looking at dull, lifeless sidewalks? Let me introduce you to Clean Slate Pressure Washing Services! 💦 Our team worked wonders on my sidewalk, bringing it back to life and restoring its vibrant appearance.',
-    link: '/concrete-washing'
+    link: '/services/concrete-washing'
   },
   {
     title: 'Concrete Stains',
