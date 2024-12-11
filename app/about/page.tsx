@@ -41,6 +41,15 @@ const jsonLd = {
     name: 'Clean Slate Pressure Washing NOLA',
     description: 'Clean Slate Pressure Washing NOLA is committed to providing top-quality pressure washing services across Louisiana and surrounding areas with a focus on customer satisfaction and environmental responsibility.',
     image: 'https://cleanslatepressurewashingnola.com/cleanslatelogo.webp',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '206 Mitchell Ln',
+      addressLocality: 'Des Allemands',
+      addressRegion: 'LA',
+      postalCode: '70030',
+      addressCountry: 'US'
+    },
+    
     areaServed: [
       {
         '@type': 'State',

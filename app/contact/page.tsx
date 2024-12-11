@@ -42,8 +42,8 @@ const jsonLd = {
   mainEntity: {
     '@type': 'LocalBusiness',
     name: 'Clean Slate Pressure Washing NOLA',
-    telephone: '+1-504-XXX-XXXX', // Replace with actual phone number
-    email: 'contact@cleanslatepressurewashingnola.com', // Replace with actual email
+    telephone: '+1-504-352-7963', // Replace with actual phone number
+    email: 'Rickeynaquin@cleanslatepressurewashingnola.com', // Replace with actual email
     areaServed: [
       {
         '@type': 'State',
