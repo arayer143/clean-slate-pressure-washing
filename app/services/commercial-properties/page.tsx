@@ -4,10 +4,10 @@ import Navbar from "@/components/Navbar/navbar"
 import CommercialProperties from "@/components/Services Pages/commercial-properties"
 
 export const metadata: Metadata = {
-  title: 'Commercial Property Cleaning Services | Clean Slate Pressure Washing NOLA',
+  title: 'Expert Commercial Property Cleaning Services',
   description: 'Enhance your New Orleans business with our professional commercial property cleaning services. Solutions for offices, retail, and industrial spaces.',
   openGraph: {
-    title: 'Expert Commercial Property Cleaning | Clean Slate Pressure Washing NOLA',
+    title: 'Expert Commercial Property Cleaning Services',
     description: 'Boost your New Orleans property\'s appeal with our specialized cleaning services for commercial properties. Solutions for all business types.',
     url: 'https://cleanslatepressurewashingnola.com/services/commercial-properties',
     siteName: 'Clean Slate Pressure Washing NOLA',

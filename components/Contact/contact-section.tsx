@@ -50,11 +50,14 @@ export default function ContactSection() {
   return (
     <section className="py-16 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold text-purple-800 dark:text-purple-300 mb-4 text-center">
+          Contact Us
+        </h1>
         <motion.h2 
-          className="text-3xl font-bold text-purple-800 dark:text-purple-300 mb-8 text-center"
+          className="text-2xl font-semibold text-purple-700 dark:text-purple-200 mb-8 text-center"
           {...fadeInUp}
         >
-          Get in Touch
+          Get in Touch with us today!
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div {...fadeInUp}>
@@ -157,4 +160,3 @@ export default function ContactSection() {
     </section>
   )
 }
-

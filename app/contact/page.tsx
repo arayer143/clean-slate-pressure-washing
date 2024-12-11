@@ -42,8 +42,16 @@ const jsonLd = {
   mainEntity: {
     '@type': 'LocalBusiness',
     name: 'Clean Slate Pressure Washing NOLA',
-    telephone: '+1-504-352-7963', // Replace with actual phone number
-    email: 'Rickeynaquin@cleanslatepressurewashingnola.com', // Replace with actual email
+    telephone: '+1-504-352-7963',
+    email: 'Rickeynaquin@cleanslatepressurewashingnola.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '206 Mitchell Ln',
+      addressLocality: 'Des Allemands',
+      addressRegion: 'LA',
+      postalCode: '70030',
+      addressCountry: 'US'
+    },
     areaServed: [
       {
         '@type': 'State',

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Blog | Clean Slate Pressure Washing NOLA',
   description: 'Read the latest articles about pressure washing techniques, tips, and industry news from Clean Slate Pressure Washing NOLA in Louisiana, Mississippi, and Texas.',
   openGraph: {
-    title: 'Clean Slate Pressure Washing NOLA Blog',
+    title: 'Blog | Clean Slate Pressure Washing NOLA',
     description: 'Read the latest articles about pressure washing techniques, tips, and industry news for Louisiana, Mississippi, and Texas properties.',
     url: 'https://cleanslatepressurewashingnola.com/blog',
     siteName: 'Clean Slate Pressure Washing NOLA',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Clean Slate Pressure Washing NOLA Blog',
+    title: 'Blog | Clean Slate Pressure Washing NOLA',
     description: 'Latest articles on pressure washing techniques, tips, and industry news for Louisiana, Mississippi, and Texas properties.',
     images: ['https://cleanslatepressurewashingnola.com/cleanslatelogo.webp'],
   },

@@ -4,10 +4,10 @@ import Footer from "@/components/Footer/footer"
 import Navbar from "@/components/Navbar/navbar"
 
 export const metadata: Metadata = {
-  title: 'About Clean Slate Pressure Washing NOLA',
+  title: 'About Us | Clean Slate Pressure Washing NOLA',
   description: 'Learn about Clean Slate Pressure Washing NOLA, our history, values, and commitment to top-quality pressure washing services in Louisiana and surrounding areas.',
   openGraph: {
-    title: 'About Clean Slate Pressure Washing NOLA',
+    title: 'About Us | Clean Slate Pressure Washing NOLA',
     description: 'Discover the story behind Clean Slate Pressure Washing NOLA and our dedication to excellence in pressure washing services across Louisiana and beyond.',
     url: 'https://cleanslatepressurewashingnola.com/about',
     siteName: 'Clean Slate Pressure Washing NOLA',
