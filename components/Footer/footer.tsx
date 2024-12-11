@@ -6,11 +6,11 @@ import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
 
 const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC" },
-  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/" },
-  { icon: Linkedin, href: "http://www.linkedin.com/in/rickey-naquin-719008297" },
-
+  { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC", name: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/cleanslatepressurewashnola/", name: "Instagram" },
+  { icon: Linkedin, href: "http://www.linkedin.com/in/rickey-naquin-719008297", name: "LinkedIn" },
 ]
+
 
 export default function Footer() {
   return (
