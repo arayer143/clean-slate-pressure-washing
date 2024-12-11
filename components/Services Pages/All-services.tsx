@@ -18,13 +18,13 @@ const services = [
   {
     icon: Droplet,
     title: "Soft and Pressure Washing",
-    description: "Soft Washing - Cleaning method that uses low-pressure water combined with specialized cleaning solutions to safely remove organics. Pressure Washing - Utilizes high-pressure water to remove dirt, grime, mold, and other contaminants from hard surfaces like concrete, brick, and stone.",
+    description: "Soft Washing - Pressure washing method that uses low-pressure water combined with specialized cleaning solutions to safely remove organics. Pressure Washing - Utilizes high-pressure water to remove dirt, grime, mold, and other contaminants from hard surfaces like concrete, brick, and stone.",
     link: "/services/soft-and-pressure-washing"
   },
   {
     icon: Home,
     title: "Roof Washing",
-    description: "A specialized cleaning service designed to remove algae, mold, mildew, lichen, and moss from roofing materials. Utilizing a soft washing technique, this method employs low-pressure water combined with eco-friendly cleaning solutions to safely clean and protect your roof.",
+    description: "A specialized pressure washing service designed to remove algae, mold, mildew, lichen, and moss from roofing materials. Utilizing a soft washing technique, this method employs low-pressure water combined with eco-friendly cleaning solutions to safely clean and protect your roof.",
     link: "/services/roof-washing"
   },
   {
@@ -54,7 +54,7 @@ const services = [
 ]
 
 const benefits = [
-  { icon: Building2, title: 'Enhance Curb Appeal', description: 'Regular cleaning significantly improves your property\'s appearance, making a great first impression.' },
+  { icon: Building2, title: 'Enhance Curb Appeal', description: 'Regular pressure washing significantly improves your property\'s appearance, making a great first impression.' },
   { icon: Shield, title: 'Increase Property Value', description: 'Well-maintained exteriors can boost your property value and attract potential buyers or tenants.' },
   { icon: Sparkles, title: 'Promote a Healthy Environment', description: 'Professional cleaning removes harmful contaminants, creating a healthier environment.' },
   { icon: TrendingUp, title: 'Extend Property Lifespan', description: 'Regular cleaning and maintenance can prevent long-term damage, extending the life of your property.' },
@@ -132,10 +132,16 @@ export default function AllServicesPage() {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Button asChild variant="secondary" size="lg" className="bg-yellow-400 text-purple-900 hover:bg-yellow-500 dark:bg-yellow-300 dark:text-purple-950 dark:hover:bg-yellow-400">
-              <Link href="/contact">Get a Free Quote</Link>
+              <Link href="/contact">
+                <span className="sr-only">Contact us to </span>
+                Get a Free Quote
+              </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="bg-white text-purple-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700">
-              <Link href="#services">Explore Services</Link>
+              <Link href="#services">
+                <span className="sr-only">Scroll down to </span>
+                Explore Services
+              </Link>
             </Button>
           </motion.div>
         </div>
@@ -209,7 +215,10 @@ export default function AllServicesPage() {
                   </CardContent>
                   <CardFooter className="p-6 pt-0">
                     <Button asChild variant="outline" className="bg-white hover:bg-gray-100 text-purple-600 border-purple-600 hover:text-purple-700 hover:border-purple-700 transition-colors duration-300 shadow-md hover:shadow-lg dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-purple-400 dark:border-purple-400 dark:hover:text-purple-300 dark:hover:border-purple-300">
-                      <Link href={service.link}>Learn More</Link>
+                      <Link href={service.link}>
+                        <span className="sr-only">Learn more about {service.title}</span>
+                        Learn More
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -246,10 +255,16 @@ export default function AllServicesPage() {
           <h3 className="text-3xl font-bold mb-6">Ready to Get Started?</h3>
           <div className="space-x-4">
             <Button asChild className="bg-yellow-400 text-purple-900 hover:bg-yellow-500 dark:bg-yellow-300 dark:text-purple-950 dark:hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105">
-              <Link href="/contact">Get a Free Quote</Link>
+              <Link href="/contact">
+                <span className="sr-only">Contact us to </span>
+                Get a Free Quote
+              </Link>
             </Button>
             <Button asChild variant="secondary" className="bg-white text-purple-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105">
-              <Link href="tel:5043527963">Call Us Now</Link>
+              <Link href="tel:5043527963">
+                <span className="sr-only">Click to </span>
+                Call Us Now
+              </Link>
             </Button>
           </div>
         </motion.section>
