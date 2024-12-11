@@ -39,63 +39,15 @@ const jsonLd = {
   name: 'Clean Slate Pressure Washing NOLA Gallery',
   description: 'A collection of before and after photos showcasing the exceptional pressure washing services provided by Clean Slate Pressure Washing NOLA across Louisiana, Mississippi, and Texas.',
   url: 'https://cleanslatepressurewashingnola.com/gallery',
-  provider: {
-    '@type': 'LocalBusiness',
+  author: {
+    '@type': 'Organization',
     name: 'Clean Slate Pressure Washing NOLA',
-    image: 'https://cleanslatepressurewashingnola.com/cleanslatelogo.webp',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '206 Mitchell Ln',
-      addressLocality: 'Des Allemands',
-      addressRegion: 'LA',
-      postalCode: '70030',
-      addressCountry: 'US'
+    url: 'https://cleanslatepressurewashingnola.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://cleanslatepressurewashingnola.com/cleanslatelogo.webp'
     }
-  },
-  areaServed: [
-    {
-      '@type': 'State',
-      name: 'Louisiana',
-      containsPlace: [
-        { '@type': 'City', name: 'New Orleans' },
-        { '@type': 'City', name: 'Baton Rouge' },
-        { '@type': 'City', name: 'Shreveport' },
-        { '@type': 'City', name: 'Lafayette' },
-        { '@type': 'City', name: 'Lake Charles' },
-        { '@type': 'City', name: 'Kenner' },
-        { '@type': 'City', name: 'Bossier City' },
-        { '@type': 'City', name: 'Monroe' }
-      ]
-    },
-    {
-      '@type': 'State',
-      name: 'Mississippi',
-      containsPlace: [
-        { '@type': 'City', name: 'Jackson' },
-        { '@type': 'City', name: 'Gulfport' },
-        { '@type': 'City', name: 'Southaven' },
-        { '@type': 'City', name: 'Hattiesburg' },
-        { '@type': 'City', name: 'Biloxi' },
-        { '@type': 'City', name: 'Meridian' },
-        { '@type': 'City', name: 'Tupelo' },
-        { '@type': 'City', name: 'Greenville' }
-      ]
-    },
-    {
-      '@type': 'State',
-      name: 'Texas',
-      containsPlace: [
-        { '@type': 'City', name: 'Houston' },
-        { '@type': 'City', name: 'San Antonio' },
-        { '@type': 'City', name: 'Dallas' },
-        { '@type': 'City', name: 'Austin' },
-        { '@type': 'City', name: 'Fort Worth' },
-        { '@type': 'City', name: 'El Paso' },
-        { '@type': 'City', name: 'Arlington' },
-        { '@type': 'City', name: 'Corpus Christi' }
-      ]
-    }
-  ]
+  }
 }
 
 export default function Gallery() {
@@ -115,3 +67,4 @@ export default function Gallery() {
     </div>
   )
 }
+

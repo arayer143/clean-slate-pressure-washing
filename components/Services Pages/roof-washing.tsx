@@ -24,12 +24,11 @@ export default function RoofWashing() {
   ]
 
   const galleryImages = [
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after cleaning', title: 'Roof Transformation' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Roof before and after washing', title: 'Roof Cleaning Results' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Gas station before cleaning', title: 'Gas Station Roof - Before' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Gas station after cleaning', title: 'Gas Station Roof - After' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Residential roof before and after', title: 'Residential Roof Cleaning' },
-    { src: '/placeholder.svg?height=300&width=400', alt: 'Commercial roof before and after', title: 'Commercial Roof Washing' },
+    { src: '/roof-beforeandafter.webp', alt: 'Roof before and after cleaning', title: 'Roof Transformation' },
+    { src: '/before-and-after8.webp', alt: 'Roof before and after washing', title: 'Roof Cleaning Results' },
+    { src: '/roof2-beforeandafter.webp', alt: 'Gas station before cleaning', title: 'Gas Station Roof - Before' },
+    { src: '/roof3-beforeandafter.webp', alt: 'Gas station after cleaning', title: 'Gas Station Roof - After' },
+
   ]
 
   const [isOpen, setIsOpen] = React.useState(false)
