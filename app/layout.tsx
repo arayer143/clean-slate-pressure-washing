@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from 'react';
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -111,6 +112,7 @@ export default function RootLayout({
           </Suspense>
           <Toaster />
         </ThemeProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   );
