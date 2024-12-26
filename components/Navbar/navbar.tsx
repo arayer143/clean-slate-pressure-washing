@@ -46,7 +46,8 @@ export default function Navbar() {
                 alt="Clean Slate Pressure Washing Logo" 
                 width={150} 
                 height={70} 
-                className="h-auto w-[150px] min-w-[150px]"
+                style={{ width: '150px', height: 'auto' }}
+                className="min-w-[150px]"
               />
             </Link>
           </div>

@@ -4,11 +4,12 @@ import * as React from "react"
 import Image from "next/image"
 import { motion } from 'framer-motion'
 import { Card, CardContent } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Expand, ChevronLeft, ChevronRight, X, Play, Droplets } from 'lucide-react'
 import { galleryItems, GalleryItem } from "../../lib/gallery-data"
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
 // Fisher-Yates shuffle algorithm
 function shuffleArray<T>(array: T[]): T[] {
@@ -149,7 +150,10 @@ export default function GalleryPage() {
         </div>
 
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent className="max-w-[95vw] w-full p-0 bg-white dark:bg-purple-800 sm:max-w-4xl">
+          <DialogContent className="max-w-[95vw] w-full p-0 bg-white dark:bg-purple-800 sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogTitle asChild>
+              <VisuallyHidden>Image Details</VisuallyHidden>
+            </DialogTitle>
             {currentItem && (
               <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-[80vh]">
                 {currentItem.type === 'video' ? (
@@ -159,35 +163,6 @@ export default function GalleryPage() {
                     controls
                     autoPlay
                   />
-                ) : currentItem.type === 'before-after' ? (
-                  <div className="w-full h-full flex">
-                    <div className="w-1/2 h-full relative">
-                      <Image
-                        src={currentItem.beforeSrc || ''}
-                        alt="Before"
-                        fill
-                        sizes="50vw"
-                        className="object-contain"
-                        priority
-                      />
-                      <div className="absolute top-2 left-2 bg-gold-500 text-white px-2 py-1 text-xs rounded">
-                        Before
-                      </div>
-                    </div>
-                    <div className="w-1/2 h-full relative">
-                      <Image
-                        src={currentItem.src}
-                        alt="After"
-                        fill
-                        sizes="50vw"
-                        className="object-contain"
-                        priority
-                      />
-                      <div className="absolute top-2 left-2 bg-gold-500 text-white px-2 py-1 text-xs rounded">
-                        After
-                      </div>
-                    </div>
-                  </div>
                 ) : (
                   <Image
                     src={currentItem.src}
@@ -236,3 +211,4 @@ export default function GalleryPage() {
     </>
   )
 }
+

@@ -25,6 +25,9 @@ const galleryImages = [
   { src: '/commercial-building-5.webp', alt: 'Industrial facility exterior washing', title: 'Industrial Facility Washing' },
   { src: '/commercial-building-6.webp', alt: 'WWII Museum before and after', title: 'WWII Museum Restoration' },
   { src: '/school-concrete-beforeandafter.webp', alt: 'School before and after', title: 'School Grounds Transformation' },
+  { src: '/school-building.webp', alt: 'School before and after', title: 'School Grounds Transformation' },
+  { src: '/aerial-commercial-property.webp', alt: 'Aerial of commercial property', title: 'Aerial view of commerical proprty' },
+  { src: '/commercial-building-7.webp', alt: 'Commercial property washing', title: 'Commercial property' }
 ]
 
 export default function CommercialProperties() {

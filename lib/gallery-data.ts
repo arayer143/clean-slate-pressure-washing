@@ -36,6 +36,8 @@ export const galleryItems: GalleryItem[] = [
   { src: "/siding2-beforeandafter.webp", alt: "Siding cleaning before and after 2", title: "Siding Renewal 2", type: "before-after" },
   { src: "/sign-beforeandafter.webp", alt: "Sign cleaning before and after", title: "Sign Restoration", type: "before-after" },
   { src: "/walkway-beforeandafter.webp", alt: "Walkway cleaning before and after", title: "Walkway Transformation", type: "before-after" },
+  { src: "/school-building.webp", alt: "Walkway cleaning before and after", title: "Walkway Transformation", type: "before-after" },
+  { src: "/aerial-commercial-property.webp", alt: "Walkway cleaning before and after", title: "Walkway Transformation", type: "before-after" },
 
   // Before and After Pairs
   { src: "/driveway-after.webp", alt: "Clean driveway after pressure washing", title: "Driveway Cleaning", type: "before-after", beforeSrc: "/driveway-before.webp" },
@@ -48,13 +50,11 @@ export const galleryItems: GalleryItem[] = [
   { src: "/wall-after.webp", alt: "Clean wall after pressure washing", title: "Wall Cleaning", type: "before-after", beforeSrc: "/wall-before.webp" },
 
   // Single Images
-  { src: "/cleanslatebanner.webp", alt: "Clean Slate Pressure Washing banner", title: "Company Banner", type: "image" },
-  { src: "/cleanslatelogo.jpg", alt: "Clean Slate Pressure Washing logo", title: "Company Logo", type: "image" },
-  { src: "/cleanslatelogo.webp", alt: "Clean Slate Pressure Washing logo", title: "Company Logo WebP", type: "image" },
   { src: "/commercial-building-2.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 2", type: "image" },
   { src: "/commercial-building-3.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 3", type: "image" },
   { src: "/commercial-building-4.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 4", type: "image" },
   { src: "/commercial-building-5.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 5", type: "image" },
+  { src: "/commercial-building-7.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 5", type: "image" },
   { src: "/commercial-building.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning", type: "image" },
   { src: "/driveway1.webp", alt: "Clean driveway example 1", title: "Driveway Cleaning 1", type: "image" },
   { src: "/driveway2.webp", alt: "Clean driveway example 2", title: "Driveway Cleaning 2", type: "image" },
@@ -66,8 +66,7 @@ export const galleryItems: GalleryItem[] = [
   { src: "/rockwall.webp", alt: "Clean rock wall", title: "Rock Wall Cleaning", type: "image" },
   { src: "/walkway1.webp", alt: "Clean walkway example 1", title: "Walkway Cleaning 1", type: "image" },
   { src: "/walkway2.webp", alt: "Clean walkway example 2", title: "Walkway Cleaning 2", type: "image" },
-  { src: "/whitecleanslatelogo.jpg", alt: "White Clean Slate Pressure Washing logo", title: "White Company Logo", type: "image" },
-  { src: "/whitecleanslatelogo.webp", alt: "White Clean Slate Pressure Washing logo", title: "White Company Logo WebP", type: "image" },
+
 
   // Videos
   { src: "/Download (2).mp4", alt: "Pressure washing video", title: "Pressure Washing in Action", type: "video" },

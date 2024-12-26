@@ -1,10 +1,14 @@
-"use client"
+'use client'
 
-import Image from 'next/image'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import PageBanner from "@/components/page-banner"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Label } from "@/components/ui/label"
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/CleanslatepressurewashingservicesLLC", name: "Facebook" },
@@ -12,137 +16,156 @@ const socialLinks = [
   { icon: Linkedin, href: "http://www.linkedin.com/in/rickey-naquin-719008297", name: "LinkedIn" },
 ]
 
-export default function AboutUs() {
-  return (
-    <>
-      <PageBanner 
-        title="About Us" 
-        description="Discover the story behind Clean Slate Pressure Washing"
-      />
+export default function ContactSection() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
 
-      <section className="bg-white dark:bg-purple-950 py-16 sm:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 w-full md:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="w-full aspect-[16/9] relative rounded-lg overflow-hidden shadow-xl"
-              >
-                <Image
-                  src="/cleanslatelogo.webp"
-                  alt="Clean Slate Pressure Washing Team"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </motion.div>
-              <div>
-                <motion.h2 
-                  className="text-3xl font-bold mb-6 text-black dark:text-white"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  About Clean Slate Pressure Washing
-                </motion.h2>
-                <motion.p 
-                  className="text-lg mb-4 text-black dark:text-white"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  Clean Slate Pressure Washing has been serving our community for over a decade, providing top-notch pressure washing services to homeowners and businesses alike. Our team of experienced professionals is dedicated to restoring and maintaining the beauty of your property using eco-friendly solutions and state-of-the-art equipment.
-                </motion.p>
-                <motion.p 
-                  className="text-lg mb-6 text-black dark:text-white"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  We take pride in our attention to detail and commitment to customer satisfaction. Whether it&apos;s a small residential job or a large commercial project, we approach every task with the same level of dedication and professionalism.
-                </motion.p>
-                <motion.div 
-                  className="flex justify-center space-x-4 mb-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                  <motion.a
-                    href="https://www.google.com/localservices/prolist?spp=Cg0vZy8xMWtwdmRfcngx&scp=CgAaJUNsZWFuIFNsYXRlIFByZXNzdXJlIFdhc2hpbmcgU2VydmljZXMqJUNsZWFuIFNsYXRlIFByZXNzdXJlIFdhc2hpbmcgU2VydmljZXM%3D&q=Clean+Slate+Pressure+Washing+Services&src=2&slp=UhUIARIREg8iDS9nLzExa3B2ZF9yeDE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label="View our Google 5-star reviews"
-                  >
-                    <Image src="/5stargoogle.webp" width={100} height={50} alt="Google 5-star review" className="rounded-lg shadow-md" />
-                  </motion.a>
-                  <motion.a
-                    href="https://www.yelp.com/biz/clean-slate-pressure-washing-services-des-allemands?osq=Pressure+Washing&override_cta=Request+a+Quote"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label="View our Yelp reviews"
-                  >
-                    <Image src="/yelpreview.webp" width={100} height={50} alt="Yelp review" className="rounded-lg shadow-md" />
-                  </motion.a>
-                </motion.div>
-                <motion.div 
-                  className="flex space-x-4 mb-6 justify-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                >
-                  {socialLinks.map((link, index) => (
-                    <motion.a
-                      key={index}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-black hover:text-gold-500 dark:text-white dark:hover:text-gold-400 transition-colors duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      aria-label={`Visit our ${link.name} page`}
-                    >
-                      <link.icon className="h-6 w-6" />
-                    </motion.a>
-                  ))}
-                </motion.div>
-                <motion.div 
-                  className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1 }}
-                >
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setFormStatus('submitting')
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch('https://formspree.io/f/mvgoqleg', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setFormStatus('submitted')
+        form.reset()
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setFormStatus('error')
+    }
+  }
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  }
+
+  return (
+    <section className="py-16 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold text-purple-800 dark:text-purple-300 mb-4 text-center">
+          Contact Us
+        </h1>
+        <motion.h2 
+          className="text-2xl font-semibold text-purple-700 dark:text-purple-200 mb-8 text-center"
+          {...fadeInUp}
+        >
+          Get in Touch with us today!
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div {...fadeInUp}>
+            <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 lg:h-auto">
+              <CardHeader className="lg:py-4">
+                <CardTitle className="text-2xl font-bold text-center text-purple-700 dark:text-purple-300 lg:text-xl">Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 flex flex-col items-center text-center lg:space-y-2 lg:py-2">
+                <div className="flex flex-col items-center space-y-2">
                   <Button 
-                    size="lg"
-                    className="bg-gold-500 text-black hover:bg-gold-600 shadow-md hover:shadow-lg transition-all duration-300"
-                    onClick={() => window.location.href = 'mailto:Rickeynaquin@cleanslatepressurewashingnola.com'}
-                    aria-label="Email Clean Slate Pressure Washing"
+                    variant="outline" 
+                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300 lg:w-36 lg:text-sm lg:py-1"
+                    asChild
                   >
-                    <Mail className="mr-2 h-5 w-5" />
-                    Email Us
+                    <a href="tel:5043527963">
+                      <Phone className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" />
+                      Call Me
+                    </a>
                   </Button>
                   <Button 
-                    size="lg"
-                    variant="outline"
-                    className="bg-white/10 backdrop-blur-sm border-gold-500 text-black hover:bg-gold-500 hover:text-black shadow-md hover:shadow-lg transition-all duration-300 dark:text-white dark:hover:text-black"
-                    onClick={() => window.location.href = 'tel:5043527963'}
-                    aria-label="Call Clean Slate Pressure Washing"
+                    variant="outline" 
+                    className="w-40 justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300 lg:w-36 lg:text-sm lg:py-1"
+                    asChild
                   >
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Now
+                    <a href="mailto:Rickeynaquin@cleanslatepressurewashingnola.com">
+                      <Mail className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" />
+                      Email Me
+                    </a>
                   </Button>
-                </motion.div>
-              </div>
-            </div>
-          </div>
+                </div>
+    
+                <div className="pt-4 w-full lg:pt-2">
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2 text-center lg:text-base lg:mb-1">Follow Us</h3>
+                  <div className="flex justify-center space-x-4 lg:space-x-2 py-4">
+                    {socialLinks.map((social, index) => (
+                      <Button 
+                        key={index} 
+                        variant="outline" 
+                        size="icon" 
+                        className="rounded-full bg-white dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors duration-300 lg:w-8 lg:h-8"
+                        asChild
+                      >
+                        <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+                          <social.icon className="w-5 h-5 text-purple-600 dark:text-purple-300 lg:w-4 lg:h-4" />
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+          <motion.div {...fadeInUp}>
+            <Card className="h-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-2xl text-center font-bold text-purple-700 dark:text-purple-300">Send Us a Message</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" name="name" placeholder="Your Name" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" name="email" type="email" placeholder="Your Email" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="service">Service</Label>
+                    <Select name="service" required>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="soft-pressure-washing">Soft and Pressure Washing</SelectItem>
+                        <SelectItem value="roof-washing">Roof Washing</SelectItem>
+                        <SelectItem value="concrete-washing">Concrete Washing</SelectItem>
+                        <SelectItem value="commercial-properties">Commercial Properties</SelectItem>
+                        <SelectItem value="fence-cleaning">Fence Cleaning</SelectItem>
+                        <SelectItem value="gutter-cleaning">Gutter Cleaning</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea id="message" name="message" placeholder="Your Message" required />
+                  </div>
+                  <Button type="submit" className="w-full" disabled={formStatus === 'submitting'}>
+                    {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                  </Button>
+                  {formStatus === 'submitted' && (
+                    <p className="text-green-600 dark:text-green-400">Thank you for your message. We&apos;ll get back to you soon!</p>
+                  )}
+                  {formStatus === 'error' && (
+                    <p className="text-red-600 dark:text-red-400">There was an error sending your message. Please try again.</p>
+                  )}
+                </form>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
