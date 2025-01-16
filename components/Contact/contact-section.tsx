@@ -124,6 +124,10 @@ export default function ContactSection() {
                     <Input id="email" name="email" type="email" placeholder="Your Email" required />
                   </div>
                   <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input id="phone" name="phone" type="tel" placeholder="Your Phone Number" required />
+                  </div>
+                  <div className="space-y-2">
                     <Label htmlFor="service">Service</Label>
                     <Select name="service" required>
                       <SelectTrigger>

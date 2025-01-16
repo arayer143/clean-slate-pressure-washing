@@ -21,6 +21,7 @@ export async function POST(req: Request) {
     text: `
       Name: ${formData.name}
       Email: ${formData.email}
+      Phone: ${formData.phone}
       Service: ${formData.service}
       Message: ${formData.message}
     `,
@@ -28,6 +29,7 @@ export async function POST(req: Request) {
       <h1>New contact form submission from cleanslatepressurewashingnola.com</h1>
       <p><strong>Name:</strong> ${formData.name}</p>
       <p><strong>Email:</strong> ${formData.email}</p>
+      <p><strong>Phone:</strong> ${formData.phone}</p>
       <p><strong>Service:</strong> ${formData.service}</p>
       <p><strong>Message:</strong> ${formData.message}</p>
     `,
@@ -41,4 +43,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
   }
 }
+
 
