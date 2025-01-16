@@ -19,14 +19,15 @@ export default function ContactSection() {
 
     const form = e.currentTarget
     const formData = new FormData(form)
+    const formJson = Object.fromEntries(formData.entries())
 
     try {
-      const response = await fetch('https://formspree.io/f/mvgoqleg', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        body: formData,
         headers: {
-          'Accept': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formJson),
       })
 
       if (response.ok) {
