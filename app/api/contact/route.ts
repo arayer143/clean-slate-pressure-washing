@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       Message: ${formData.message}
     `,
     html: `
-      <h1>New contact form submission</h1>
+      <h1>New contact form submission from cleanslatepressurewashingnola.com</h1>
       <p><strong>Name:</strong> ${formData.name}</p>
       <p><strong>Email:</strong> ${formData.email}</p>
       <p><strong>Service:</strong> ${formData.service}</p>
