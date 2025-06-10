@@ -48,13 +48,17 @@ export const galleryItems: GalleryItem[] = [
   { src: "/parkinglot-after.webp", alt: "Clean parking lot after pressure washing", title: "Parking Lot Cleaning", type: "before-after", beforeSrc: "/parkinglot-before.webp" },
   { src: "/siding-after.webp", alt: "Clean siding after pressure washing", title: "Siding Cleaning", type: "before-after", beforeSrc: "/siding-before.webp" },
   { src: "/wall-after.webp", alt: "Clean wall after pressure washing", title: "Wall Cleaning", type: "before-after", beforeSrc: "/wall-before.webp" },
+    { src: "/fence-beforeandafter.webp", alt: "Clean wall after pressure washing", title: "Wall Cleaning", type: "before-after", beforeSrc: "/wall-before.webp" },
 
   // Single Images
   { src: "/commercial-building-2.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 2", type: "image" },
   { src: "/commercial-building-3.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 3", type: "image" },
   { src: "/commercial-building-4.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 4", type: "image" },
   { src: "/commercial-building-5.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 5", type: "image" },
-  { src: "/commercial-building-7.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 5", type: "image" },
+    { src: "/commercial-building-6.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 6", type: "image" },
+  { src: "/commercial-building-7.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 7", type: "image" },
+    { src: "/commercial-building-8.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 8", type: "image" },
+  { src: "/commercial-building-9.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning 9", type: "image" },
   { src: "/commercial-building.webp", alt: "Commercial building pressure washing", title: "Commercial Cleaning", type: "image" },
   { src: "/driveway1.webp", alt: "Clean driveway example 1", title: "Driveway Cleaning 1", type: "image" },
   { src: "/driveway2.webp", alt: "Clean driveway example 2", title: "Driveway Cleaning 2", type: "image" },
@@ -69,8 +73,11 @@ export const galleryItems: GalleryItem[] = [
 
 
   // Videos
+    { src: "/house-washing-video.mp4", alt: "Pressure washing process", title: "Washing Process", type: "video" },
+        { src: "/house-washing-video.mp4", alt: "Pressure washing process", title: "Washing Process", type: "video" },
   { src: "/Download (2).mp4", alt: "Pressure washing video", title: "Pressure Washing in Action", type: "video" },
   { src: "/Tiktokvid1.mp4", alt: "TikTok video 1", title: "TikTok Showcase 1", type: "video" },
   { src: "/Tiktokvid2.mp4", alt: "TikTok video 2", title: "TikTok Showcase 2", type: "video" },
   { src: "/washing.mp4", alt: "Pressure washing process", title: "Washing Process", type: "video" },
+ 
 ];
